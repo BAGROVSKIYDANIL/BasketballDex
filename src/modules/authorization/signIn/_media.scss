@@ -1,0 +1,121 @@
+@media (max-width: 1438px)
+{
+    .container
+    {
+        max-width: 1140px;
+    }
+    .form 
+    {
+        &__wrapper
+        {
+            padding: 0;
+            padding-right: 120px;
+        }
+        &__image
+        {
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 1200px)
+{
+    .container 
+    {
+        max-width: 960px;
+    }
+    .form
+    {   
+        &__wrapper
+        {
+            padding: 0;
+            padding-right: 50px;
+        }
+        &__image
+        {
+            padding: 0;
+            img 
+            {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) 
+{
+    .container
+    {
+        max-width: 720px;
+    }
+    .form
+    {
+        &__input
+        {
+            width: 300px;
+        }
+        &__button
+        {
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 768px)
+{
+    .container
+    {
+        max-width: 540px;
+    }
+    .form 
+    {
+        &__imagewrapper 
+        {
+            display: none;
+        }
+        
+        &__block 
+        {
+            justify-content: center;
+        }
+        &__wrapper 
+        {
+            padding: 0;
+
+        }
+        &__input
+        {
+            width: 366px;
+        }
+        &__button
+        {
+            width: 366px;
+        }
+    }
+}
+
+@media (max-width: 576px) 
+{
+    .container
+    {
+        width: 100%;
+        padding: 0 10px;
+        max-height: 623px;
+    }
+    .form 
+    {
+
+        &__title
+        {
+            text-align: center;
+        }
+        &__input
+        {
+            width: 327px;
+        }
+        &__button 
+        {
+            width: 327px;
+        }
+    }
+}

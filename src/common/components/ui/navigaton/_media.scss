@@ -1,0 +1,41 @@
+@media(max-width: 1200px)
+{
+    .burger
+    {
+        display: flex;
+    }
+}
+@media (max-width: 768px)
+{
+    .container
+    {
+        max-width: 540px;
+    }
+
+    .header
+    {
+        justify-content: center;
+        &__menu
+        {
+            display: none;
+        }
+        &__img 
+        {
+            margin: 0;
+        }
+    }
+}
+@media (max-width: 376px)
+{
+    .header
+    {
+        height: 62px;
+        align-items: center;
+        
+        &__img
+        {
+            width: 137px;
+            height: 34px;
+        }
+    }
+}

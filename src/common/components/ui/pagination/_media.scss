@@ -1,0 +1,169 @@
+@media (max-width: 576px)
+{
+    .pagination
+    {
+        margin-bottom: 16px;
+
+        &__button
+        {
+            a 
+            {
+                width: 35px;
+                height: 35px;
+                font-size: 15px;
+                margin-right: 8px;    
+            }
+        }
+        span 
+        {
+            width: 35px;
+            height: 35px;
+            margin-right: 8px;
+        }
+        &__select
+        {
+            height: 35px;
+            padding: 4px 4px 2px 12px;
+        }
+        &__number
+        {
+            margin: 0;
+            display: inline-block;
+            width: 9px;
+        }
+        &__line
+        {
+            margin: 0;
+            top: 4px;
+            left: 28px;
+        }
+        &__open 
+        {
+            top: 4px;
+            left: 29px;
+        }
+        &__list
+        {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+@media (max-width: 426px)
+{
+    .pagination
+    {
+        // padding: 0 15px 0 12px;
+        #display
+        {
+            display: none;
+        }
+        &__open
+        {
+            left: 36px;
+        }
+        &__line
+        {
+            left: 30px;
+        }
+        &__list
+        {
+            // width: 75px;
+            width: 100%;
+            left: 0;
+            
+            li 
+            {
+                padding-left: 14px;
+            }
+        }
+    }
+}
+@media (max-width: 376px)
+{
+    .pagination
+    {
+        margin-bottom: 16px;
+        &__button
+        {
+            a 
+            {
+                width: 28px;
+                height: 28px;
+                font-size: 15px;
+                margin-right: 8px;
+            }
+        }
+        #display
+        {
+            display: none;
+        }
+        &__select
+        {
+            width: 60px;
+            height: 28px;
+        }
+        span
+        {
+            width: 28px;
+            height: 28px;
+        }
+        &__select
+        {
+
+            padding: 2px 4px 2px 14px;
+        }
+        &__number
+        {
+            margin: 0;
+            display: inline-block;
+            width: 9px;
+        }
+        &__line
+        {
+            margin: 0;
+            top: 1px;
+            left: 36px;
+        }
+        &__open
+        {
+            left: 40px;
+            svg 
+            {
+                width: 16px;
+                height: 16px;
+                flex-shrink: 0;
+            }
+        }
+        &__list
+        {
+            top: -110px;
+            left: -1px;
+            width: 60px;
+
+            li 
+            {
+                height: 35px;
+            }
+        }
+    }
+}
+@media (max-width: 356px)
+{
+    .pagination
+    {
+        &__line
+        {
+            left: 26px;
+        }
+        &__open
+        {
+            left: 28px;
+        }
+        &__list
+        {
+            left: 0;
+            width: 100%;
+        }
+    }
+}

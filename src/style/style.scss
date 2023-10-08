@@ -1,0 +1,29 @@
+@import url('https://webfonts.brand.ucsb.edu/webfont.min.css');
+
+.container
+{
+    width: 1140px;
+    margin: 0 auto; 
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Avenir', sans-serif;
+}
+
+
+.app
+{
+    margin: 0 auto;
+    position: relative;
+}
+
+main
+{
+    position: relative;
+    display: flex;
+}
+
+@import 'media'

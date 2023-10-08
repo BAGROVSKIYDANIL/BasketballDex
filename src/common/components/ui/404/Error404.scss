@@ -1,0 +1,32 @@
+.error
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    // width: 456px;
+    height: 100vh;  
+    &__title
+    {
+        margin-top: 48px;
+        color:  #FF768E;
+        font-size: 36px;
+        font-weight: 800;
+        text-align: center;
+    }
+    &__subtitle
+    {
+        margin-top: 32px;
+        color:  #707070;
+        font-size: 24px;
+        font-weight: 200;
+        text-align: center;
+    }
+    &__img 
+    {
+        justify-content: center;    
+        display: flex;
+    }
+}
+
+@import 'media'

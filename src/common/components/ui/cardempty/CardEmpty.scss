@@ -1,0 +1,46 @@
+.cards
+{
+    width: 556px;
+    height: 570px;
+    border-radius: 15px;
+    background: #FFF;
+    margin: 139px auto;
+    // position: relative;
+    // left: 25%;
+    padding: 48px 0;
+
+    &__wrapper
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title
+    {
+        margin-top: 48px;
+        color: #FF768E;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 800;
+    }
+
+    &__subtitle
+    {
+        margin-top: 24px;
+        // margin-bottom: 24px;
+        text-align: center;
+        color: #707070;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    &__img
+    {
+        // margin-top: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+@import 'media'

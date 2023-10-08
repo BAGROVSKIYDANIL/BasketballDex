@@ -1,0 +1,82 @@
+body
+{
+    background: var(--ui-lightest-grey-1, #F6F6F6);
+}
+.menu
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--ui-white, #FFF);
+    width: 140px;
+    padding: 32px 0;
+    height: 100%;
+    
+    &__wrapper
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__teams
+    {
+        text-align: center;
+        height: 46px;
+        width: 38px;
+    }
+    &__playears
+    {
+        text-align: center;
+        height: 46px;
+        width: 40px;
+        margin-top: 36px;
+
+    }
+    &__signOut
+    {
+        text-align: center;
+        height: 46px;
+        width: 46px;
+    }
+    &__title
+    {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        color: #9C9C9C;
+        &-red 
+        {
+            @extend .menu__title;
+            color: #FF768E;
+        }
+    }
+    &__signOutmargin
+    {
+        text-align: center;
+        height: 46px;
+        width: 46px;
+        margin: 808px 47px 0 47px;
+    }
+    &.active
+    {
+        display: flex;
+        position: absolute;
+        height: 100%;
+    }
+}
+.overlay
+{
+    &.visible
+    {
+        top: 0;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+}
+
+@import 'media'

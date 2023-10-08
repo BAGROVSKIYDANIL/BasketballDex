@@ -1,0 +1,46 @@
+@media(max-width: 576px)
+{
+    .error
+    {
+        &__title
+        {
+            font-size: 32px;
+        }
+        &__subtitle
+        {
+            font-size: 18px;
+            text-align: center;
+        }
+        &__img
+        {
+            img 
+            {
+                width: 350px;
+                height: 180px;
+            }
+        }
+    }
+}
+@media(max-width: 376px)
+{
+    .error
+    {
+        &__img
+        {
+            img 
+            {
+                width: 271.903px;
+                height: 147.037px;    
+            }
+        }
+        &__title
+        {
+            font-size: 17px;
+        }
+        &__subtitle
+        {
+            margin-top: 16px;
+            font-size: 15px;
+        }
+    }
+}

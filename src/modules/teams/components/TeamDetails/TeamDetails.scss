@@ -1,0 +1,104 @@
+.cardTeam 
+{
+    margin-top: 32px;
+    &__menu
+    {
+        border-radius: 10px 10px 0px 0px;
+        border: 0.5px solid #9C9C9C;
+        background: #FFF;
+        padding: 0 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 69px;
+    }
+    &__change
+    {
+        display: flex;
+        
+    }
+    &__create
+    {
+        align-items: center;
+        display: flex;
+        margin-right: 16px;
+    }
+    &__delete
+    {
+        display: flex;
+        align-items: center;
+    }
+    &__path
+    {
+        display: flex;
+        align-items: center;
+        height: 21px;
+        
+        a 
+        {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            color:  #E4163A;
+            line-height: 24px;
+        }
+
+        span 
+        {
+            color:  #9C9C9C;
+        }
+    }
+    &__wrapper
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0px 0px 10px 10px;
+        background: linear-gradient(315deg, #707070 0%, #393939 100%);
+        padding: 65px 0;
+    }
+    &__information
+    {
+        max-width: 442px;
+    }
+    &__row
+    {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    &__img  
+    {
+        height: 210px;
+    }
+    &__mainTitle
+    {
+        font-size: 36px;
+        font-weight: 800;
+        color: #FFF;
+    }
+    &__title
+    {
+        font-size: 24px;
+        font-weight: 800;
+        color:  #FFF;
+    }
+    &__subtitle
+    {
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #FFF;
+    }
+    &__yearFoundation
+    {
+        margin-right: 84px;
+    }
+    &__conference
+    {
+        margin-top: 54px;
+    }
+
+}
+
+@import 'media'

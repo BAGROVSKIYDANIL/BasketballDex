@@ -1,0 +1,83 @@
+@media(max-width: 768px)
+{
+    .roster
+    {
+        .head
+        {
+            &__row
+            {
+                padding: 0;
+                padding-left: 16px;
+            }
+            &__column2
+            {
+                display: none;
+            }
+        }
+        .body
+        {
+            &__row
+            {
+                padding: 0;
+                padding-left: 6px;
+            }
+            &__column2
+            {
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 426px)
+{
+    .roster
+    {
+        &__header
+        {
+            border-radius: 0;
+        }
+    }
+    .body
+    {
+        &__row
+        {
+            border-radius: 0;
+        }
+    }
+}
+@media (max-width: 376px)
+{
+    .roster
+    {
+        &__header
+        {
+            span 
+            {
+                font-size: 15px;
+            }
+        }
+
+        .head
+        {           
+            &__player
+            {
+                font-size: 15px;
+            }           
+        }
+        .body
+        {
+            &__number
+            {
+                font-size: 13px;
+            }
+            &__title
+            {
+                font-size: 15px;
+            }
+            &__subtitle
+            {
+                font-size: 13px;
+            }
+        }
+    }
+}

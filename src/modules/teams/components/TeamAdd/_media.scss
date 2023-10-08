@@ -1,0 +1,86 @@
+@media (max-width: 1438px)
+{
+    .addTeam
+    {
+        &__wrapper
+        {
+            padding: 48px 0;
+            justify-content: space-around;
+        }
+    }
+}
+@media (max-width: 992px)
+{
+    .addTeam
+    {
+        &__wrapper
+        {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form
+        {
+            margin-top: 48px;
+        }
+    }
+}
+
+@media (max-width: 426px)
+{
+    .container
+    {
+    }
+    .addTeam
+    {
+
+    }
+}
+@media (max-width: 376px)
+{
+    .addTeam
+    {
+        margin-top: 16px;
+        border-radius: 0;
+        &__loading
+        {
+            width: 168px;
+            height: 130.5px;
+        }
+    }
+    .form
+    {
+        &__wrapper
+        {
+            padding: 0 24px;
+        }
+        &__input
+        {
+            width: 100%;
+        }
+        &__button
+        {
+            display: flex;
+        }
+        &__cancel
+        {
+            margin-right: 24px;
+        }
+    }
+}
+@media(max-width: 356px)
+{
+    .form
+    {   
+        &__wrapper
+        {
+            padding: 0;
+            width: 300px;
+        }
+        &__input
+        {
+            // width: 300px;
+        }
+    }
+}

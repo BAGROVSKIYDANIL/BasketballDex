@@ -1,0 +1,151 @@
+@media (max-width: 1438px) 
+{
+    .cards
+    {
+        &__item 
+        {
+            width: 304px;
+        }
+    }
+}
+@media (max-width: 1200px) 
+{
+}
+@media (max-width: 992px) 
+{
+    .cards
+    {
+        &__grid
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__item
+        {
+            width: 348px;
+        }
+    }
+
+}
+@media (max-width: 768px) 
+{
+    .cards
+    {
+        &__grid
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__item
+        {
+            width: 258px;
+            height: 330px;
+        }
+    }
+}
+@media (max-width: 576px)
+{
+    .cards
+    {
+        margin-bottom: 16px;
+
+        &__grid
+        {
+            column-gap: 16px;
+            row-gap: 16px;
+        }
+        &__item
+        {
+            width: 192px;
+            height: 250px;
+        }
+        &__wrapper
+        {
+            img 
+            {
+                width: 121.5px;
+                height: 92.619px;
+            }
+        }
+    }
+}
+@media (max-width: 426px)
+{
+    .cards
+    {
+        &__grid
+        {
+            column-gap: 10px;
+            row-gap: 12px;
+            grid-template-columns: repeat(2, minmax(150px, 1fr));
+        }
+        &__item
+        {
+            width: 183px;
+        }
+    }
+    .search
+    {
+        padding: 0 12px;
+    }
+}
+@media (max-width: 376px) 
+{
+    .container
+    {
+        padding: 0 12px;
+    }
+    .cards
+    {
+        margin-bottom: 16px;
+        &__grid
+        {
+            column-gap: 12px;
+            row-gap: 12px;
+        }
+        &__item
+        {
+            width: 169.5px;
+            height: 180px;
+        }
+        &__wrapper
+        {
+            img
+            {
+                width: 121.5px;
+                height: 92.619px;
+            }
+        }
+        &__text
+        {
+            padding: 18px 0;
+            height: 76px;
+        }
+        &__name
+        {
+            font-size: 15px;
+        }
+    }
+}
+@media (max-width: 356px)
+{
+    .cards
+    {
+        &__grid
+        {
+            column-gap: 10px;
+            row-gap: 10px;
+            grid-template-columns: repeat(2, minmax(145px, 1fr));
+        }
+        &__item
+        {
+            width: 145px;
+        }
+        &__name
+        {
+            font-size: 13px;
+        }
+    }
+    .search
+    {
+        padding: 0;
+    }
+}

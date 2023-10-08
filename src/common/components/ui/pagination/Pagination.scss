@@ -1,0 +1,109 @@
+.pagination
+{
+    margin-bottom: 32px;;
+    &__wrapper
+    {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+    &__button
+    {
+        display: flex;
+        a 
+        {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            text-decoration: none;
+            color: #707070;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    span 
+    {
+        margin-right: 16px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__select
+    {
+        width: 88px;
+        height: 40px;
+        border-radius: 4px;
+        border: 0.5px solid #D1D1D1;
+        background: #FFF;
+        position: relative;
+        display: inline-block;
+    }
+
+    &__list
+    {
+        width: 88px;
+        position: absolute;
+        z-index: 1;
+        top: -125px;
+        list-style-type: none;
+        border-radius: 4px;
+        border: 0.5px solid #D1D1D1;
+        background: #FFF;
+
+        li
+        {
+            border-bottom : 0.5px solid  #D1D1D1;
+            height: 40px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding-left: 22px;
+            &.border-bottom
+            {
+                border: none;
+            }
+        }
+        a 
+        {
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #707070;
+        }
+    }
+    &__number
+    {
+        color:  #303030;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        display: flex;
+        margin: 8px 20px 8px 20px;
+    }
+    &__open
+    {
+        position: absolute;
+        top: 20%;
+        left: 65%;
+    }
+    &__line
+    {
+        position: absolute;
+        top: 0;
+        border-left: 0.5px solid #9C9C9C;
+        height: 24px;
+        margin: 8px 36px 8px 52px;
+    }
+}
+.button
+{
+    background: var(--ui-red, #E4163A);
+    border-radius: 4px;
+}
+@import 'media'
