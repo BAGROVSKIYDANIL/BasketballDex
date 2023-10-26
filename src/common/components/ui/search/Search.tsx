@@ -1,3 +1,4 @@
+import MultiSelect from '../MultiSelect/MultiSelect';
 import './Search.scss'
 
 const Search = () =>
@@ -12,6 +13,7 @@ const Search = () =>
                     </svg>
                 </button>
             </div>
+            <MultiSelect/>
             <div className="search__btn">
                 <div className="search__title">Add</div>
                 <div className="search__icon">

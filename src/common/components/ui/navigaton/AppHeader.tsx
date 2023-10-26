@@ -7,7 +7,7 @@ import './appHeader.scss';
 const AppHeader = () =>
 {
     return(
-        <nav className="header">
+        <header className="header">
             <div className="header__img">
                 <img src={logo} alt="" />
             </div>
@@ -18,7 +18,7 @@ const AppHeader = () =>
             </svg>
             </div>
             <MenuBurger/>
-        </nav>
+        </header>
     )
 }
 

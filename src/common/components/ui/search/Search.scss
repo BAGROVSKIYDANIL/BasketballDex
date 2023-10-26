@@ -12,11 +12,12 @@
         border-radius: 4px;
         height: 40px;
         align-items: center;
+        width: 364px;
+        justify-content: space-between;
     }
     &__input
     {
         border: none;
-        width: 364px;
         outline: none;
         font-size: 14px;
         font-weight: 500;

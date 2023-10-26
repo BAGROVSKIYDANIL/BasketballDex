@@ -6,7 +6,10 @@ import TeamDetail from "./pages/TeamDetail";
 import TeamAdd from "./pages/TeamAdd";
 import Page404 from "./pages/404";
 import PlayersCard from "./pages/PlayersCard";
-import MultiSelect from "./common/components/ui/MultiSelect/MultiSelect";
+import PagePlayersEmpty from "./pages/PagePlayersEmpty";
+import PagePlayersDetails from "./pages/PagePlayersDetails";
+import PagePlayersAdd from "./pages/PagePlayersAdd";
+
 
 function App() {
   return(
@@ -17,7 +20,9 @@ function App() {
         {/* <TeamAdd/> */}
         {/* <Page404/> */}
         {/* <PlayersCard/> */}
-        <MultiSelect/>
+        {/* <PagePlayersEmpty/> */}
+        {/* <PagePlayersDetails/> */}
+        <PagePlayersAdd/>
     </>
   )
 }

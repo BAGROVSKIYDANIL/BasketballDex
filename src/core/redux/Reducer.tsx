@@ -1,5 +1,5 @@
 import {createReducer} from "@reduxjs/toolkit";
-import { SetOverlay, setDomNodeRef } from "./actions";
+import { SetOverlay, setDomNodeRef} from "./actions";
 
 interface AppState
 {
@@ -10,7 +10,7 @@ interface AppState
 const initialState: AppState = 
 {
     domNodeRef: null,
-    overlay:null
+    overlay:null,
 };
 
 const appReducer = createReducer(initialState, (builder) => 

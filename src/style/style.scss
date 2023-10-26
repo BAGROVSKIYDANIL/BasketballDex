@@ -13,17 +13,24 @@
     font-family: 'Avenir', sans-serif;
 }
 
+// .app
+// {
+//     margin: 0 auto;
+//     position: relative;
+// }
 
-.app
+.App
 {
-    margin: 0 auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main
 {
     position: relative;
     display: flex;
+    flex: 1;
 }
 
 @import 'media'

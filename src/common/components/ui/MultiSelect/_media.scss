@@ -1,0 +1,43 @@
+@media(max-width: 1438px)
+{
+    .css-b62m3t-container
+    {
+        left: -112px !important;
+    }
+    .custom-select
+    {
+        &__control
+        {
+            width: 304px !important;
+        }
+    }
+
+}
+@media(max-width: 992px)
+{
+    .css-b62m3t-container
+    {
+        left: 0px !important;
+        margin: 0 !important;
+    }
+    .custom-select
+    {
+        &__control
+        {
+            width: 300px !important;
+        }
+    }
+}
+@media(max-width: 768px)
+{   .css-b62m3t-container
+    {
+        margin-top: 16px !important;
+    }
+    .custom-select
+    {
+        &__control
+        {
+            width: 100% !important;
+        }
+    }    
+}

@@ -1,13 +1,13 @@
-import CardLogo from '../../../../assets/images/illustration.svg'
-import './CardEmpty.scss'
-const CardEmpty = () => {
+import Character from '../../../../assets/images/Character.svg'
+import './PlayersEmpty.scss'
+const PlayersEmpty = () => {
 
 
     return (
         <div className="cards">
             <div className="cards__wrapper">
                 <div className="cards__img">
-                    <img src={CardLogo} alt="" />
+                    <img src={Character} alt="" />
                 </div>
                 <div className="cards__title">Empty here</div>
                 <div className="cards__subtitle">Add new teams to continue</div>
@@ -16,4 +16,4 @@ const CardEmpty = () => {
     );
 };
 
-export default CardEmpty;
+export default PlayersEmpty;

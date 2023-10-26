@@ -1,0 +1,187 @@
+@media(max-width: 1438px)
+{
+    .players
+    {
+        &__wrapper
+        {
+            padding-right: 74px;
+        }
+        &__main-title
+        {
+            font-size: 30px;
+
+            span 
+            {
+                font-size: 30px;
+            }
+        }
+    }
+}
+@media(max-width: 992px)
+{
+    .players
+    {
+        // height: 100%;
+        // width: 100%;
+        // overflow: hidden;
+        &__wrapper
+        {
+            padding-right: 44px;
+        }
+        &__img 
+        {
+            align-items: end;
+            img 
+            {
+                // width: 100%;
+                // height: auto;
+                // object-fit: contain;    
+                width: 350px;
+                height: 300px;
+            }
+        }
+        &__main-title
+        {
+            font-size: 25px;
+
+            span 
+            {
+                font-size: 25px;
+            }
+        }
+        &__row1
+        {
+            margin-top: 35px;
+        }
+        &__row2
+        {
+            margin-top: 44px;
+        }
+        &__age
+        {
+            margin-top: 44px;   
+            margin-bottom: 10px;
+        }
+    
+    }
+}
+@media(max-width: 768px)
+{
+    .players
+    {
+        &__wrapper
+        {
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+        }
+        &__img
+        {
+            justify-content: center;
+            align-items: center;
+        }
+        &__main-title
+        {
+            margin-top: 48px;
+            text-align: center;
+        }
+        &__row1
+        {
+            justify-content: space-around;
+        }
+        &__age
+        {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+@media(max-width: 576px)
+{
+    .players
+    {
+        &__img
+        {
+            img 
+            {
+                width: 300px;
+                height: 250px;
+            }
+        }
+    }
+}
+@media(max-width: 426px)
+{
+    .players
+    {
+        margin-top: 16px;
+        &__menu
+        {
+            border-radius: 0;
+            height: 48px;
+        }
+        &__wrapper
+        {
+            border-radius: 0;
+            padding-bottom: 48px;
+        }
+        &__row1
+        {
+            margin-top: 48px;   
+            align-items: center;
+            flex-direction: column;
+        }
+        &__row2
+        {
+            margin: 0;
+        }
+        &__position
+        {
+            text-align: center;
+        }
+        &__team
+        {
+            margin-top: 32px;
+            text-align: center;
+        }
+        &__height
+        {
+            margin-top: 32px;
+            text-align: center;
+        }
+        &__weight
+        {
+            margin: 0;
+            margin-top: 32px;
+            text-align: center;
+        }
+        &__age
+        {
+            margin-top: 32px;
+            margin-bottom: 0;
+        }
+    }
+}
+@media(max-width: 376px)
+{
+    .players
+    {
+        &__main-title
+        {
+            font-size: 17px;
+
+            span 
+            {
+                font-size: 17px;
+            }
+        }
+        &__title
+        {
+            font-size: 17px;
+        }
+        &__subtitle
+        {
+            font-size: 15px;
+        }
+    }
+}
