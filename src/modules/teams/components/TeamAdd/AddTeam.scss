@@ -1,4 +1,4 @@
-.addTeam 
+.addittion
 {
     border-radius: 10px 10px 10px 10px;
     background: #FFF;
@@ -9,7 +9,6 @@
         display: flex;
         padding: 48px 229px 48px 73px;
         justify-content: space-between;
-        // padding: 0 229px 0 73px;
     }
 
     &__menu
@@ -50,7 +49,6 @@
         background: #9C9C9C;
         width: 336px;
         height: 261px;
-        // margin-right: 136px;
     }
 }
 .form 
@@ -86,27 +84,27 @@
         padding: 0;        
     }
 
-    &__cancel
-    {
-        width: 171px;
-        height: 40px;
-        border-radius: 4px;
-        border: 1px solid #9C9C9C;      
-        color: #9C9C9C;
-        font-size: 15px;
-        font-weight: 500;
-        margin-right: 24px;
-    }
-    &__save 
-    {
-        width: 171px;
-        height: 40px;
-        border-radius: 4px;
-        background:  #E4163A;
-        border: none;
-        color: #FFF;
-        font-size: 15px;
-        font-weight: 500;
-    }
+    // &__cancel
+    // {
+    //     width: 171px;
+    //     height: 40px;
+    //     border-radius: 4px;
+    //     border: 1px solid #9C9C9C;      
+    //     color: #9C9C9C;
+    //     font-size: 15px;
+    //     font-weight: 500;
+    //     margin-right: 24px;
+    // }
+    // &__save 
+    // {
+    //     width: 171px;
+    //     height: 40px;
+    //     border-radius: 4px;
+    //     background:  #E4163A;
+    //     border: none;
+    //     color: #FFF;
+    //     font-size: 15px;
+    //     font-weight: 500;
+    // }
 }
 @import 'media'

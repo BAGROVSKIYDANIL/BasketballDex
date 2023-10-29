@@ -40,58 +40,26 @@
         font-size: 36px;
         font-weight: 400;
         margin: 0;
-        margin-bottom: 50px;
+        margin-bottom: 32px;
     }
-    &__button
-    {
-        width: 365px;
-        height: 40px;
-        padding: 8px 0px;
-        font-size: 16px;
-        color: var(--ui-white, #FFF);
-        font-weight: 500;
-        border-radius: 4px;
-        border: none;
-        background: var(--ui-red, #E4163A);
-        margin: 24px 0 24px 0;
 
-    }
     &__group
     {
+        display: flex;
+        align-items: center;
         position: relative;
+        height: 92px;
         svg
         {
             display: flex;
             position: absolute;
-            top: 20px;
-            right: 10px;
-        }
-    }
-    &__label
-    {
-        position: absolute;
-        top: -20px;
-        text-align: left;
-        color: #707070;
-        line-height: 18px;
-    }
-    &__input
-    {
-        width: 365px;
-        height: 40px;
-        border-radius: 4px;   
-        background:  #F6F6F6;
-        border: none;
-        padding: 0;
-        margin-top: 8px;
-        &-margin
-        {
-            @extend .form__input; 
-            margin-bottom: 42px;
+            top: 38px;
+            right: 12px;
         }
     }
     &__link
     {
+        margin-top: 24px;
         font-weight: 500;
         color: #707070;
         font-size: 14px;

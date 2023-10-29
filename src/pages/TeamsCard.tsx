@@ -6,7 +6,6 @@ const Teams = () =>
 {
     return(
         <Layout>
-            {/* <Button variant="secondary">Igor</Button> */}
             <Search/>
             <Lists/>
             <Pagination/>

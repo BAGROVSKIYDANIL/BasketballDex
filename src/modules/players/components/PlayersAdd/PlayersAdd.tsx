@@ -2,7 +2,11 @@ import {useState } from 'react'
 import Select, {OnChangeValue} from 'react-select'
 import { IOption } from '../../../../common/components/ui/MultiSelect/interface'
 import makeAnimated from 'react-select/animated'
+import Input from '../../../../common/components/ui/input/Input'
+import Label from '../../../../common/components/ui/label/Label'
+import Button from '../../../../common/components/ui/button/Button'
 
+import Calendar from '../../../../assets/icon/calendar-blank.svg'
 import './PlayersAdd.scss'
 
 const positionOptions:IOption[] = [
@@ -94,11 +98,11 @@ const PlayersAdd = () =>
                 <div className="form">
                     <form action="" className="form__wrapper">
                         <div className="form__group">
-                            <label htmlFor="" className="form__label">Name</label>
-                            <input className='form__input' type="text" />
+                            <Label text={'Name'}/>
+                            <Input/>
                         </div>
                         <div className="form__group">
-                            <label className="form__label" htmlFor="">Position</label>
+                            <Label text='Position'/>
                             <Select
                             classNamePrefix='players-select'
                             onChange={newValue => onChange(newValue, setcurrentPosition)}
@@ -108,7 +112,7 @@ const PlayersAdd = () =>
                             isMulti/>
                         </div>
                         <div className="form__group">
-                            <label className="form__label" htmlFor="">Team</label>
+                            <Label text='Team'/>
                             <Select
                             classNamePrefix='players-select'
                             onChange={newValue => onChange(newValue, setCurrentTeam)}
@@ -119,30 +123,31 @@ const PlayersAdd = () =>
                         <div className="form__group">
                             <div className="form__row1">
                                 <div className="form__height">
-                                    <label htmlFor="" className="form__label">Height (cm)</label>
-                                    <input type="text" className="form__input" />
+                                    <Label text='Height (cm)'/>
+                                    <Input/>
                                 </div>
                                 <div className="form__weight">
-                                    <label htmlFor="" className="form__label">Weight (kg)</label>
-                                    <input type="text" className="form__input" />
+                                    <Label text='Weight (kg)'/>
+                                    <Input/>
                                 </div>
                             </div>
                         </div>
                         <div className="form__group">
                             <div className="form__row2">
                                     <div className="form__birthday">
-                                        <label htmlFor="" className="form__label">Birthday</label>
-                                        <input type="text" className="form__input" />
+                                        <Label text='Birthday'/>
+                                        <Input/>
+                                        <img src={Calendar} alt="calendar" />
                                     </div>
                                     <div className="form__number">
-                                        <label htmlFor="" className="form__label">Number</label>
-                                        <input type="text" className="form__input" />
+                                        <Label text='Number'/>
+                                        <Input/>
                                     </div>
                             </div>
                         </div>
                         <div className="form__button">
-                            <button className='form__cancel'>Cancel</button>
-                            <button className='form__save'>Save</button>
+                            <Button variant='Cancel'>Cancel</Button>
+                            <Button variant='Save'>Save</Button>
                         </div>
                     </form>
                 </div>

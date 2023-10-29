@@ -1,39 +1,23 @@
 @media (max-width: 1438px) {
-    .container {
+    .container-sign {
         max-width: 1140px;
-    }
-
-    .form 
-    {
-        &__block
-        {
-            padding: 0;
-            padding-right: 114px;
-        }
-        &__imagewrapper
-        {
-            padding: 0;
-        }
     }
 }
 
 @media (max-width: 1200px) {
-    .container {
+    .container-sign 
+    {
         max-width: 960px;
     }
 
-    .form {
-        &__block
-        {
-            padding: 0;
-            padding-right: 50px;
-        }
+    .form 
+    {
 
         &__imagewrapper 
         {
-            padding: 0;
-
-            img {
+            max-width: 550px;
+            img 
+            {
                 max-width: 100%;
             }
         }
@@ -41,7 +25,7 @@
 }
 
 @media (max-width: 992px) {
-    .container {
+    .container-sign {
         max-width: 720px;
     }
 
@@ -51,68 +35,70 @@
             width: 300px;
         }
 
-        &__button 
+        &__wrapper
         {
             width: 300px;
         }
-        &__wrapper
+        &__imagewrapper
         {
-            width: 100%;
+            width: 350px;
         }
     }
 }
 
 @media (max-width: 768px) {
-    .container 
+    .container-sign 
     {
         max-width: 540px;
-        display: flex;
-        justify-content: center;
     }
-
+    .wrapper
+    {
+        justify-content: center;
+        align-items: center;
+    }
     .form 
     {
         &__imagewrapper 
         {
             display: none;
         }
-
-        &__block 
-        {
-            padding: 0;
-
-        }
-
-
-        &__input {
-            width: 366px;
-        }
-
-        &__button {
-            width: 366px;
-        }
     }
 }
 
 @media (max-width: 576px) {
-    .container {
+    .container-sign 
+    {
         width: 100%;
-        padding: 0 10px;
-        max-height: 623px;
     }
-
     .form {
 
-        &__title {
+        &__title 
+        {
             text-align: center;
         }
-
-        &__input {
-            width: 327px;
+        &__wrapper
+        {
+            width: 366px;
         }
-
-        &__button {
-            width: 327px;
+    }
+}
+@media(max-width: 426px)
+{
+    .form
+    {
+        &__wrapper
+        {
+            width: 320px;
+        }
+    }
+}
+@media(max-width: 356px)
+{
+    .form
+    {
+        &__wrapper
+        {
+            width: 300px;
         }
     }
 }

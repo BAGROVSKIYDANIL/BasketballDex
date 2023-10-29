@@ -1,6 +1,6 @@
 @media (max-width: 1438px)
 {
-    .addTeam
+    .addittion
     {
         &__wrapper
         {
@@ -11,7 +11,7 @@
 }
 @media (max-width: 992px)
 {
-    .addTeam
+    .addittion
     {
         &__wrapper
         {
@@ -27,19 +27,9 @@
     }
 }
 
-@media (max-width: 426px)
-{
-    .container
-    {
-    }
-    .addTeam
-    {
-
-    }
-}
 @media (max-width: 376px)
 {
-    .addTeam
+    .addittion
     {
         margin-top: 16px;
         border-radius: 0;
@@ -55,17 +45,9 @@
         {
             padding: 0 24px;
         }
-        &__input
-        {
-            width: 100%;
-        }
         &__button
         {
             display: flex;
-        }
-        &__cancel
-        {
-            margin-right: 24px;
         }
     }
 }
@@ -77,10 +59,6 @@
         {
             padding: 0;
             width: 300px;
-        }
-        &__input
-        {
-            // width: 300px;
         }
     }
 }

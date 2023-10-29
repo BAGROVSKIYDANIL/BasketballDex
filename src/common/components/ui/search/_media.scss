@@ -30,7 +30,6 @@
         &__btn
         {
             margin-top: 16px;
-            width: 100%;
         }
     }
 }
@@ -40,26 +39,21 @@
     {
         margin: 16px 0;
         flex-direction: column;
-
-        &__btn
-        {
-            margin-top: 16px;
-            width: 100%;
-        }        
+    }
+}
+@media(max-width: 426px)
+{
+    .search
+    {
+        padding: 0 12px;
     }
 }
 @media(max-width: 376px)
 {
     .search
     {
-        padding: 0;
+        padding: 0 12px;
         margin: 16px 0;
         flex-direction: column;
-
-        &__btn
-        {
-            margin-top: 16px;
-            width: 100%;
-        }
     }
 }

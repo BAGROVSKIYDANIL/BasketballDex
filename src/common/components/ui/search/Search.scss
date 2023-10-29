@@ -32,17 +32,9 @@
 
         align-items: center;
     }
-    &__btn 
+    &__btn
     {
-        display: flex;  
-        padding: 8px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        border-radius: 4px;
-        background: #E4163A;
-        width: 104px;
-        height: 40px;
+        display: flex;
     }
     &__title
     {

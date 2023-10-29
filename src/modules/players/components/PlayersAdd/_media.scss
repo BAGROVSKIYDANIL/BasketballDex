@@ -26,17 +26,6 @@
         }
     }
 }
-
-@media (max-width: 426px)
-{
-    .container
-    {
-    }
-    .addTeam
-    {
-
-    }
-}
 @media (max-width: 376px)
 {
     .addition
@@ -55,32 +44,35 @@
     }
     .form
     {
-        &__wrapper
-        {
-            padding: 0 24px;
-        }
-        &__input
-        {
-            width: 100%;
-        }
+        width: 100%;
+        padding: 0 24px;
         &__button
         {
             display: flex;
         }
-        &__cancel
+        &__birthday
         {
-            margin-right: 24px;
+            img 
+            {
+                position: absolute;
+                left: 123px;
+                top: 36px;
+            }
         }
     }
 }
 @media(max-width: 356px)
 {
+
     .form
     {   
-        &__wrapper
+        padding: 0 12px;
+        &__birthday
         {
-            padding: 0;
-            width: 300px;
+            img 
+            {
+                left: 39%;
+            }
         }
     }
 }

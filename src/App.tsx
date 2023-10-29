@@ -1,5 +1,5 @@
-import AppHeader from "./common/components/ui/navigaton/AppHeader";
-import LeftBlockMenu from "./common/components/ui/menuburger/LeftBlockMenu";
+import PageSignIn from "./pages/PageSignIn";
+import PageSignUp from "./modules/registration/signUp/SignUp";
 import Teams from "./pages/TeamsCard";
 import TeamEmpty from "./pages/TeamEmpty";
 import TeamDetail from "./pages/TeamDetail";
@@ -14,15 +14,17 @@ import PagePlayersAdd from "./pages/PagePlayersAdd";
 function App() {
   return(
     <>
-        {/* <Teams/> */}
+        {/* <PageSignIn/> */}
+        {/* <PageSignUp/> */}
+        <Teams/>
         {/* <TeamEmpty/> */}
         {/* <TeamDetail/> */}
         {/* <TeamAdd/> */}
-        {/* <Page404/> */}
+        {/* <Page404/>   */}
         {/* <PlayersCard/> */}
         {/* <PagePlayersEmpty/> */}
-        {/* <PagePlayersDetails/> */}
-        <PagePlayersAdd/>
+        {/* <PagePlayersDetails/>    */}
+        {/* <PagePlayersAdd/> */}
     </>
   )
 }
