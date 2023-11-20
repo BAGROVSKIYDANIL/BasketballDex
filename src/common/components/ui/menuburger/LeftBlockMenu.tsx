@@ -1,20 +1,18 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { useAppSelector, useAppDispatch} from '../../../hooks/redux.hook';
-import { isOpen } from '../../../../core/redux/actions';
-import { Link } from 'react-router-dom';
+import { isOpen, activeTeam, activePlayer } from '../../../../core/redux/actions';
+import {useNavigate } from 'react-router-dom';
 
 import './leftBlovkMenu.scss';
 
 
 const LeftBlockMenu: React.FC = () =>
 {
-    const {name, open} = useAppSelector((state) => state.app)
+    const {name, open, activeTeams, activePlayers} = useAppSelector((state) => state.app);
     const [menuOpen, setMenuOpen] = useState<boolean>(true);
-    const [isActive, setIsActive] = useState(false);
-    const menu = useRef<HTMLDivElement>(null)
-    const overlay = useRef<HTMLDivElement>(null)
-    const teams = useRef<HTMLDivElement>(null)
-    const players = useRef<HTMLDivElement>(null)
+    const menu = useRef<HTMLDivElement>(null);
+    const overlay = useRef<HTMLDivElement>(null);
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const openMenus = () =>
@@ -33,7 +31,7 @@ const LeftBlockMenu: React.FC = () =>
         {
             closeMenu()
         }
-        
+
     },[open])
 
     const closeMenu = () =>
@@ -50,17 +48,27 @@ const LeftBlockMenu: React.FC = () =>
     const handleOutsideClick = (event: React.MouseEvent<HTMLDivElement>) =>
     {
         const menuElement: HTMLDivElement | null = document.querySelector('.menu');
-        console.log(menuElement)
         if(menuElement && !menuElement.contains(event.target as Node))
         {
             closeMenu();
         }
     }
+    
+    const  activeModulesTeam =  async () =>
+    {  
+        navigate('/PageEmptyTeam')
+        dispatch(activeTeam(!activeTeams))
+        dispatch(activePlayer(false))
+  
 
-    const activeModules = () =>
-    {
-        setIsActive(!isActive)
     }
+    const activeModulesPlayer = () =>
+    {
+        navigate('/PageEmptyPlayer')
+        dispatch(activePlayer(!activePlayers))    
+        dispatch(activeTeam(false))     
+    }
+
 
     return(
         <div 
@@ -78,21 +86,17 @@ const LeftBlockMenu: React.FC = () =>
                         </div>
                     <hr />
                     </div>
-                    <div onClick={activeModules} className={`menu__teams ${isActive ? 'gumer' : ''}`}>
-                        <Link to='/PageEmptyTeam'>
+                    <div onClick={activeModulesTeam} className={`menu__teams ${activeTeams ? 'gumer': null}`}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M10.9898 8C10.9898 9.66 9.6598 11 7.9998 11C6.3398 11 4.9998 9.66 4.9998 8C4.9998 6.34 6.3398 5 7.9998 5C9.6598 5 10.9898 6.34 10.9898 8ZM18.9899 8C18.9899 9.66 17.6599 11 15.9999 11C14.3399 11 12.9999 9.66 12.9999 8C12.9999 6.34 14.3399 5 15.9999 5C17.6599 5 18.9899 6.34 18.9899 8ZM7.99988 13C5.66988 13 0.999878 14.17 0.999878 16.5V18C0.999878 18.55 1.44988 19 1.99988 19H13.9999C14.5499 19 14.9999 18.55 14.9999 18V16.5C14.9999 14.17 10.3299 13 7.99988 13ZM15.03 13.05C15.38 13.02 15.71 13 16 13C18.33 13 23 14.17 23 16.5V18C23 18.55 22.55 19 22 19H16.82C16.93 18.69 17 18.35 17 18V16.5C17 15.03 16.21 13.92 15.07 13.09C15.0669 13.0869 15.0639 13.083 15.0606 13.0787C15.053 13.0688 15.0439 13.0569 15.03 13.05Z" fill="#9C9C9C"/>
                             </svg>
                             <span className='menu__title'>Teams</span>
-                        </Link>
                     </div>
-                    <div ref={players} onClick={activeModules} className="menu__playears">    
-                        <Link to='/PageEmptyPlayer'>
+                    <div onClick={activeModulesPlayer}  className={`menu__playears ${activePlayers ? 'gumer' : ''}`}>    
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M15.9999 8C15.9999 10.21 14.2099 12 11.9999 12C9.78989 12 7.99989 10.21 7.99989 8C7.99989 5.79 9.78989 4 11.9999 4C14.2099 4 15.9999 5.79 15.9999 8ZM3.99997 18C3.99997 15.34 9.32997 14 12 14C14.67 14 20 15.34 20 18V19C20 19.55 19.55 20 19 20H4.99997C4.44997 20 3.99997 19.55 3.99997 19V18Z" fill="#9C9C9C"/>
                             </svg>
                             <span className='menu__title'>Players</span>
-                        </Link>
                     </div>
                 </div>
                 <div className="menu__signout">

@@ -51,10 +51,7 @@ body
         text-align: center;
         height: 46px;
         width: 38px;
-        a 
-        {
-            text-decoration: none;
-        }
+        cursor: pointer;
         &:hover
         {
             svg path,  .menu__title
@@ -71,10 +68,6 @@ body
         width: 40px;
         margin-top: 36px;
         cursor: pointer;
-        a 
-        {
-            text-decoration: none;
-        }
         &:hover
         {
             svg path,  .menu__title

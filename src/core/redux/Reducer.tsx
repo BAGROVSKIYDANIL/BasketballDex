@@ -1,5 +1,5 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {isLogin, setName, openMenu, isOpen} from "./actions";
+import {isLogin, setName, openMenu, isOpen, activeTeam, activePlayer} from "./actions";
 
 interface AppState
 {
@@ -7,6 +7,8 @@ interface AppState
     isLogged: boolean;
     name: string;
     open: boolean;
+    activeTeams: boolean;
+    activePlayers: boolean;
 }
 
 const initialState: AppState = 
@@ -14,7 +16,9 @@ const initialState: AppState =
     isLogged: false,
     name: '',
     menu: null,
-    open: false
+    open: false,
+    activeTeams: false,
+    activePlayers: false
 };
 
 const appReducer = createReducer(initialState, (builder) => 
@@ -39,6 +43,14 @@ const appReducer = createReducer(initialState, (builder) =>
     builder.addCase(openMenu, (state, action) =>
     {
         state.menu = action.payload;
+    })
+    builder.addCase(activeTeam, (state, action) =>
+    {
+        state.activeTeams = action.payload;
+    })
+    builder.addCase(activePlayer, (state, action) =>
+    {
+        state.activePlayers = action.payload;
     })
 });
 
