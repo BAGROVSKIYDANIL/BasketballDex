@@ -1,5 +1,7 @@
 import Character from '../../../../assets/images/Character.svg'
+import { Link } from 'react-router-dom';
 import './PlayersEmpty.scss'
+
 const PlayersEmpty = () => {
 
 

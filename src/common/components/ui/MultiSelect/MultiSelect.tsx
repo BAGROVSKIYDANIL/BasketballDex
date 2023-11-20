@@ -31,11 +31,7 @@ const options:IOption[] = [
         label: 'Philadelphia seventy sixers'
     }
 ]
-// interface MultiSelectProps 
-// {
-//     margin?: string;
-//     left?: string;
-// }
+
 
 const animatedComponents = makeAnimated();
 

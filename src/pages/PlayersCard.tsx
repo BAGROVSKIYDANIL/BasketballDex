@@ -6,7 +6,7 @@ import Pagination from "../common/components/ui/pagination/Pagination";
 const PlayersCard = () => {
     return (
         <Layout>
-            <Search/>
+            <Search showMultiSelect={true}/>
             <PlayersList/>
             <Pagination/>
         </Layout>

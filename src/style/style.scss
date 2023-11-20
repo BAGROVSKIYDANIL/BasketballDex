@@ -1,4 +1,5 @@
-@import url('https://webfonts.brand.ucsb.edu/webfont.min.css');
+// @import url('https://webfonts.brand.ucsb.edu/webfont.min.css');
+@import url('https://db.onlinewebfonts.com/c/0983e84d4a1963e075b5ae8ca12e2a4f?family=Avenir+Medium');
 
 .container
 {
@@ -12,14 +13,16 @@
     box-sizing: border-box;
     font-family: 'Avenir', sans-serif;
 }
-
 // .app
 // {
 //     margin: 0 auto;
 //     position: relative;
 // }
-
-.App
+body
+{
+    background:  #F6F6F6;
+}
+.app
 {
     display: flex;
     flex-direction: column;

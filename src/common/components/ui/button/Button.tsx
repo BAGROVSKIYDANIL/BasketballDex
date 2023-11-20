@@ -4,14 +4,15 @@ import './Button.scss'
     interface ButtonProps 
     {
         children: ReactNode,
+        type?: 'submit'| 'button',
         variant?: 'default'|'Cancel' |'Save'| 'Add',
         onClick?: () => void;
     }
 
-const Button: React.FC<ButtonProps> = ({children, onClick, variant}) =>
+const Button: React.FC<ButtonProps> = ({children, onClick, variant, type}) =>
 {
     return(
-        <button type='button' className={variant} onClick={onClick}>{children}</button>
+        <button type={type} className={variant} onClick={onClick}>{children}</button>
     )
 }
 

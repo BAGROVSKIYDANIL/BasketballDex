@@ -1,27 +1,46 @@
 import {createReducer} from "@reduxjs/toolkit";
-import { SetOverlay, setDomNodeRef} from "./actions";
+import {isLogin, setName, openMenu, isOpen} from "./actions";
 
 interface AppState
 {
-    domNodeRef: React.RefObject<any> | null;
-    overlay: React.RefObject<any> | null;
+    menu: React.RefObject<any> | null;
+    isLogged: boolean;
+    name: string;
+    open: boolean;
 }
 
 const initialState: AppState = 
 {
-    domNodeRef: null,
-    overlay:null,
+    isLogged: false,
+    name: '',
+    menu: null,
+    open: false
 };
 
 const appReducer = createReducer(initialState, (builder) => 
 {
-    builder.addCase(setDomNodeRef, (state, action) => {
-    state.domNodeRef = action.payload;
-    });
-    builder.addCase(SetOverlay, (state, action) =>
+
+    builder.addCase(isLogin, (state, action) =>
     {
-        state.overlay = action.payload;
+        state.isLogged = true;
+        console.log('login', state.isLogged)
+    })
+    builder.addCase(setName, (state, action) =>
+    {
+        state.name = action.payload;
+        console.log(action.payload)
+
+    })
+
+    builder.addCase(isOpen, (state, action) =>
+    {
+        state.open = action.payload
+    })
+    builder.addCase(openMenu, (state, action) =>
+    {
+        state.menu = action.payload;
     })
 });
+
 
 export default appReducer;

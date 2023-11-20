@@ -1,9 +1,9 @@
 body
 {
-    background: var(--ui-lightest-grey-1, #F6F6F6);
+    background: #FFF;
 }
 .menu
-{
+{   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,9 @@ body
         p 
         {
             margin-left: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #303030;
         }
     }
     &__user
@@ -48,6 +51,18 @@ body
         text-align: center;
         height: 46px;
         width: 38px;
+        a 
+        {
+            text-decoration: none;
+        }
+        &:hover
+        {
+            svg path,  .menu__title
+            {
+                fill: #FF5761;
+                color: #FF5761;
+            }
+        }
     }
     &__playears
     {
@@ -55,12 +70,32 @@ body
         height: 46px;
         width: 40px;
         margin-top: 36px;
+        cursor: pointer;
+        a 
+        {
+            text-decoration: none;
+        }
+        &:hover
+        {
+            svg path,  .menu__title
+            {
+                fill: #FF5761;
+                color: #FF5761;
+            }
+
+        }
+
     }
-    &__signOut
+    &__signout
     {
         text-align: center;
         height: 46px;
         width: 46px;
+        a 
+        {
+            text-decoration: none;
+        }
+
     }
     &__title
     {
@@ -102,5 +137,12 @@ body
         z-index: 1;
     }
 }
-
+.gumer
+{
+        svg path,  .menu__title
+        {
+            fill: #FF5761;
+            color: #FF5761;
+        }
+}
 @import 'media'

@@ -1,30 +1,23 @@
-.container 
-{
-    width: 1440px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0 auto;
-}
+
 .form
 {
+    background: #FFF;
+    &__content
+    {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
     &__block
     {
         flex-grow: 1;
         display: flex;
     }
-    &__wrapper
-    {
-        padding: 0 120px;
-    }
-
 
     &__image
     {
         display: flex;
         align-items: center;
-        padding: 0 114.54px 0 114px;
         &wrapper 
         {
             display: flex;

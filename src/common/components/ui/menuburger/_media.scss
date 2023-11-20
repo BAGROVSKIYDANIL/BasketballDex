@@ -37,6 +37,11 @@
             {
                 margin-right: 8px;
             }
+            a 
+            {
+                display: flex;
+                align-items: center;
+            }
         }
         &__playears
         {
@@ -50,8 +55,13 @@
             {
                 margin-right: 8px;
             }
+            a 
+            {
+                display: flex;
+                align-items: center;
+            }
         }
-        &__signOut
+        &__signout
         {
             display: flex;
             align-items: center;

@@ -1,25 +1,29 @@
-import {useSelector} from 'react-redux'
-import { Reducer } from 'react';
-import { RootState } from '../../../../core/redux/store';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import { isOpen } from '../../../../core/redux/actions';
 
 import './MenuBurger.scss'
 
 const MenuBurger: React.FC = () => 
 {
+    const dispatch = useAppDispatch();
+    const {open} =useAppSelector((state) => state.app)
 
-    const overlay = useSelector((state: RootState) => state.app.overlay);
-    const domNodeRef = useSelector((state: RootState) => state.app.domNodeRef);
-
-    const openMenu = () =>
+    const openMenus = () =>
     {
-            domNodeRef?.current.classList.toggle('active');
-            overlay?.current.classList.toggle('visible');
+            if(open)
+            {
+                dispatch(isOpen(false))
+            }else
+            {
+                dispatch(isOpen(true))
+            }
+
     }
 
 
     return(
         <div
-        onClick={openMenu}
+        onClick={openMenus}
         className="burger">
             <div className="bar"></div>
             <div className="bar"></div>

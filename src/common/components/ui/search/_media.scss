@@ -30,6 +30,11 @@
         &__btn
         {
             margin-top: 16px;
+            a 
+            {
+                width: 100%;
+                display: flex;
+            }
         }
     }
 }

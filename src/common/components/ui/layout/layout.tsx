@@ -4,7 +4,7 @@ import LeftBlockMenu from "../menuburger/LeftBlockMenu"
 export const Layout = ({children} : any ) =>
 {
   return(
-    <div className="App">
+    <div className="app">
       <AppHeader/>
       <main>
         <LeftBlockMenu/>

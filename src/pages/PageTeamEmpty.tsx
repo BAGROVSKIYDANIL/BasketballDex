@@ -4,7 +4,7 @@ import CardEmpty from '../common/components/ui/cardempty/CardEmpty';
 import Pagination from '../common/components/ui/pagination/Pagination';
 import Search from '../common/components/ui/search/Search';
 
-const TeamEmpty = () => {
+const PageTeamEmpty = () => {
     return (
         <Layout>
             <Search/>
@@ -14,4 +14,4 @@ const TeamEmpty = () => {
     );
 };
 
-export default TeamEmpty;
+export default PageTeamEmpty;

@@ -6,7 +6,7 @@ import PlayersEmpty from "../modules/players/components/PlayersEmpty/PlayersEmpt
 const PagePlayersEmpty = () => {
     return (
         <Layout>
-            <Search/>
+            <Search showMultiSelect={true}/>
             <PlayersEmpty/>
             <Pagination/>
         </Layout>
