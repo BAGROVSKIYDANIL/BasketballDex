@@ -12,6 +12,7 @@ export const useHttp = () =>
 
             if(!response.ok)
             {
+                console.log(response.body)
                 throw new Error(`Could not fetch ${url}, status: ${response.status}`)
             }
             
@@ -21,7 +22,6 @@ export const useHttp = () =>
         }
         catch(e)
         {
-            setProcess('error')
             throw e;
         }
 

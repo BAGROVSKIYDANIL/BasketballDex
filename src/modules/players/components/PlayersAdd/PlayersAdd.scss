@@ -3,6 +3,16 @@
     width: 100% !important;
     border: none !important;
 }
+.css-1fdsijx-ValueContainer
+{
+    padding: 0 !important;
+    padding-left: 12px !important;
+}
+.css-tj5bde-Svg
+{
+    top: 10px !important;
+    right: 8px !important;
+}
 .players-select
 {
     &__control
@@ -11,11 +21,18 @@
         background:  #F6F6F6 !important;
         box-shadow:none !important;
         border-color: #D1D1D1 !important;
+        height: 40px;
     }
     &__value-container
     {
         cursor: text !important;
+        height: 40px;
     }
+    &__input-container
+    {
+        height: 40px
+    }
+
     &__multi-value
     {
         border-radius: 4px !important;
@@ -41,9 +58,19 @@
             color: #fff !important;
         }   
     }
+
     &__indicators
     {
         cursor: pointer !important;
+        padding-right: 12px !important;
+    }
+    &__indicator-separator
+    {
+        margin-right: 25px !important;
+    }
+    &__dropdown-indicator
+    {
+        padding: 0 !important;
     }
 
 }

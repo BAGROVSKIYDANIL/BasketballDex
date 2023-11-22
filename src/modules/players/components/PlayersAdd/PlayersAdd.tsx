@@ -5,6 +5,7 @@ import makeAnimated from 'react-select/animated'
 import Input from '../../../../common/components/ui/input/Input'
 import Label from '../../../../common/components/ui/label/Label'
 import Button from '../../../../common/components/ui/button/Button'
+import { Link } from 'react-router-dom'
 
 import Calendar from '../../../../assets/icon/calendar-blank.svg'
 import './PlayersAdd.scss'
@@ -147,7 +148,7 @@ const PlayersAdd = () =>
                         </div>
                         <div className="form__button">
                             <Button variant='Cancel'>Cancel</Button>
-                            <Button variant='Save'>Save</Button>
+                            <Link to='/PagePlayerCard'><Button variant='Save'>Save</Button></Link>
                         </div>
                     </form>
                 </div>

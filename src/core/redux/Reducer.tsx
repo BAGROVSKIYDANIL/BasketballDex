@@ -32,7 +32,6 @@ const appReducer = createReducer(initialState, (builder) =>
     builder.addCase(setName, (state, action) =>
     {
         state.name = action.payload;
-        console.log(action.payload)
 
     })
 

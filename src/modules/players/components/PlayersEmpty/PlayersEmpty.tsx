@@ -6,13 +6,13 @@ const PlayersEmpty = () => {
 
 
     return (
-        <div className="cards">
-            <div className="cards__wrapper">
-                <div className="cards__img">
+        <div className="card">
+            <div className="card__wrapper">
+                <div className="card__img">
                     <img src={Character} alt="" />
                 </div>
-                <div className="cards__title">Empty here</div>
-                <div className="cards__subtitle">Add new teams to continue</div>
+                <div className="card__title">Empty here</div>
+                <div className="card__subtitle">Add new teams to continue</div>
             </div>
         </div>
     );

@@ -3,6 +3,7 @@ import Label from '../../../../common/components/ui/label/Label';
 import Button from '../../../../common/components/ui/button/Button';
 
 import './AddTeam.scss'
+import { Link } from 'react-router-dom';
 
 
 const AddTeam = () => {
@@ -41,7 +42,7 @@ const AddTeam = () => {
                         </div>
                         <div className="form__button">
                             <Button variant='Cancel'>Cancel</Button>
-                            <Button variant='Save'>Save</Button>
+                            <Link to='/PageTeamCard'><Button variant='Save'>Save</Button></Link>
                         </div>
                     </form>
                 </div>

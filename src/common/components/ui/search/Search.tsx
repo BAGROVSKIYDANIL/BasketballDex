@@ -1,6 +1,6 @@
 import MultiSelect from '../MultiSelect/MultiSelect';
 import Button from '../button/Button';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 
 import './Search.scss'
 
@@ -11,6 +11,9 @@ interface SearchProps
 
 const Search: React.FC<SearchProps> = ({showMultiSelect}) =>
 {
+    const location = useLocation()
+    const path = location.pathname === '/PageEmptyTeam' ? '/PageTeamAdd' : location.pathname === '/PageEmptyPlayer' ? '/PagePlayerAdd' : location.pathname === '/PagePlayerCard' ? '/PagePlayerAdd' : location.pathname === '/PageTeamCard' ? '/PageTeamAdd': null;
+
     return(
         <div className="search">
             <div className="search__form">
@@ -21,9 +24,10 @@ const Search: React.FC<SearchProps> = ({showMultiSelect}) =>
                     </svg>
                 </button>
             </div>
-            {showMultiSelect && <MultiSelect/>}
+            
+            {showMultiSelect &&  <div className="search__select"><MultiSelect/></div>}
             <div className="search__btn">
-                <Link to='/PageTeamAdd'><Button variant='Add'>Add +</Button></Link>
+                {path && <Link to={path}><Button variant='Add'>Add +</Button></Link>}
             </div>
 
 

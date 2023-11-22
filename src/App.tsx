@@ -24,9 +24,13 @@ function App() {
         <Route path="/SignUp" element={<PageSignUp/>}/>
 
         <Route element={<PrivateRoute/>}>
-            <Route  path="/PageEmptyTeam" element={<PageTeamEmpty/>}/>
+            <Route path="/PageEmptyTeam" element={<PageTeamEmpty/>}/>
             <Route path="/PageTeamAdd" element={<TeamAdd/>}/>
             <Route path="/PageEmptyPlayer" element={<PagePlayersEmpty/>}/>
+            <Route path="/PagePlayerAdd" element={<PagePlayersAdd/>}/>
+            <Route path="/PageTeamCard" element={<Teams/>}/>
+            <Route path="PagePlayerCard" element={<PlayersCard/>}/>
+            <Route/>
         </Route>
 
 
@@ -37,7 +41,7 @@ function App() {
         {/* <TeamDetail/> */}
         {/* <TeamAdd/> */}
         {/* <Page404/>   */}
-        {/* <PlayersCard/> */}
+        {/*  */}
         {/* <PagePlayersDetails/>    */}
         {/* <PagePlayersAdd/> */}
     </>

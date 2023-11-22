@@ -1,5 +1,5 @@
 
-.css-b62m3t-container
+.search__select .css-b62m3t-container
 {
     margin-left: 24px !important;
     left: -142px !important;
@@ -10,7 +10,7 @@
     &__control
     {        
         width: 364px !important;   
-        min-height: 40px !important;
+        height: 40px !important;
         box-shadow:none !important;
         border-color: #D1D1D1 !important;
         background:  #F6F6F6 !important;
@@ -23,6 +23,7 @@
     {
         padding: 0 10px 0 12px !important;
         cursor: text !important;
+        height: 40px !important;
         white-space: nowrap !important;
         &--is-multi
         {

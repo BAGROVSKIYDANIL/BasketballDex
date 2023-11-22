@@ -5,7 +5,7 @@
         max-width: 540px;
         padding: 0;
     }
-    .cards
+    .card
     {
         width: 100%;    
         &__img
@@ -20,7 +20,7 @@
 }
 @media (max-width: 426px)
 {
-    .cards
+    .card
     {
         margin: 16px 0 130px 0;
         
@@ -36,7 +36,7 @@
     {
         padding: 0;
     }
-    .cards
+    .card
     {
         margin: 16px 0 130px 0;
         border-radius: 0;
