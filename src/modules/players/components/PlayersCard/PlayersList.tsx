@@ -9,7 +9,7 @@ interface CardsPlayersItemProps
 
 
 const PlayersList = () => {
-
+    const teamCard = []
     const players: CardsPlayersItemProps[] = [
         {
         imageUrl: Player,

@@ -6,7 +6,7 @@ import { useHttp } from '../../../../common/hooks/http.hook';
 import { useAppDispatch,useAppSelector } from '../../../../common/hooks/redux.hook';
 import { useState } from 'react';
 import { uploadImage } from '../../action';
-
+import { IFormData, IChangeInput } from '../../interfaces/interface';
 
 import './AddTeam.scss'
 
@@ -17,38 +17,51 @@ const AddTeam: React.FC = () => {
     const {request} = useHttp();
     const dispatch = useAppDispatch();
     const {imageUrl} = useAppSelector((state) => state.team)
-    const [selectedFile, setSelectedFile] = useState<any>(null);
+    // const [selectedFile, setSelectedFile] = useState<any>(null);
     const token = localStorage.getItem('token')
-    const [formData, setFormData] = useState<any>({
+    const [formData, setFormData] = useState<IFormData>({
         name: '',
         division: '',
         conference: '',
-        yearOfFoundation: '',
+        foundationYear: null,
         imageUrl: ''
     })
 
-    const handleInputChange =  (e:React.ChangeEvent<HTMLInputElement>) =>
+    const handleInputChange =  (e:React.ChangeEvent<HTMLInputElement> ) =>
     {   
         let name = ''
-        let value = ''
+        let value = null
+        console.log(e.target)
+        // const {name, value} = e.target;
         if(e.target.type !== 'file')
         {
-            name = e.target.name;
-            value = e.target.value;
-         setFormData({...formData, [name]: value, imageUrl: imageUrl});
+            
+            console.log(name)
+            // if(name === '')
+            // {
+            //     value = e.target.value;
+            // }
+            // else
+            // {
+            //     value = parseInt(e.target.value)
+            // }
+            // parseInt(e.target.value)
+            name = e.target.name
+            value = e.target.value
+            // value = typeof value === 'string' ? e.target.value : parseInt(e.target.value)
+            const numericValue = name === 'foundationYear' ? parseInt(value) : value
+            // console.log(typeof value )
+            
+         setFormData({...formData, [name]: numericValue, imageUrl: imageUrl});
 
         }
-        else
-        {
-        }
+
 
 
     }
     const handleSubmit = async (e:React.MouseEvent<HTMLFormElement>) =>
     {
         e.preventDefault()
-        console.log('полетела', formData)
-
         try
         {
             const headers = {
@@ -56,16 +69,9 @@ const AddTeam: React.FC = () => {
                 'Authorization': `Bearer ${token}`
             }
             const newTeam = await request('http://dev.trainee.dex-it.ru/api/Team/Add', 'POST', JSON.stringify(formData), headers);
+            console.log(newTeam)
                 navigate('/PageTeamCard')
-            if(newTeam.ok)
-            {
-                console.log('Создание прошло успешно')
-                console.log(newTeam)
-            }
-            else
-            {
-                console.log('Провал', newTeam)
-            }
+
         }     
         catch(e)
         {
@@ -88,7 +94,7 @@ const AddTeam: React.FC = () => {
         await dispatch(uploadImage(image))  
         console.log(data)
     }
-    console.log(formData)
+    console.log( formData)
     const image = `http://dev.trainee.dex-it.ru${imageUrl}`
     return (
         <div className="addittion">
@@ -142,8 +148,8 @@ const AddTeam: React.FC = () => {
                         <div className="form__group">
                             <Label text='Year of foundation'/>
                             <Input  type='text'
-                                    name='yearOfFoundation'
-                                    value={formData.yearOfFoundation}
+                                    name='foundationYear'
+                                    value={formData.foundationYear}
                                     onChange={handleInputChange}
                                     />
                         </div>

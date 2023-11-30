@@ -2,7 +2,7 @@ import './Input.scss'
 
 interface InputProps
 {
-    value?: string;
+    value?: string | number | null ;
     name?: string;
     type?: string;
     accept?: string;
@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({value, onChange, type, name, accept, id}) 
         type={type} 
         accept={accept}
         name={name}
-        value={value} 
+        value={value === null ? '' : value} 
         onChange={onChange}/>
     );
 };
