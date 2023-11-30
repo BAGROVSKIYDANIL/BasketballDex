@@ -5,7 +5,7 @@ import SignUpLogo from '../../../assets/images/SignUpLogo.png'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState} from 'react';
 import { useHttp } from '../../../common/hooks/http.hook';
-import { isLogin, setName } from '../../../core/redux/actions';
+import { isLogin} from '../../../core/redux/actions';
 import { useAppDispatch } from '../../../common/hooks/redux.hook';
 
 import './signUp.scss';
@@ -37,7 +37,6 @@ const SignUp: React.FC = () =>
             {
                 const newUser = await request('http://dev.trainee.dex-it.ru/api/Auth/SignUp', 'POST', JSON.stringify(formData));
                 await dispatch(isLogin(newUser))
-                await dispatch(setName(newUser.name))
                 navigate('/PageEmptyTeam')
                 if(newUser.ok)
                 {

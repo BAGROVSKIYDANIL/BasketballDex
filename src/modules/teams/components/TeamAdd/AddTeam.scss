@@ -39,7 +39,7 @@
         }
     }
 
-    &__loading 
+    &__loading
     {
         display: flex;
         justify-content: center;
@@ -49,6 +49,26 @@
         background: #9C9C9C;
         width: 336px;
         height: 261px;
+    }
+    &__label
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: relative;
+
+        svg
+        {
+            z-index: 1;
+        }
+    }
+    &__img
+    {
+        position: absolute;
+        z-index: 0;
     }
 }
 .form 

@@ -4,17 +4,15 @@ import Input from '../../../common/components/ui/input/Input';
 import Basketball from '../../../assets/images/Basketball.png' ;
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { isLogin, setName } from '../../../core/redux/actions';
 import {Link} from 'react-router-dom'
 import { useAppDispatch } from '../../../common/hooks/redux.hook';
-import { useHttp } from '../../../common/hooks/http.hook';
+import { loginUser } from './asyncAction';
 
 import './signIn.scss';
 
 
 const SignIn: React.FC = () =>
 {   
-    const {request} = useHttp();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const [login, setUserLogin] = useState('');
@@ -26,12 +24,9 @@ const SignIn: React.FC = () =>
         e.preventDefault();
         try
         {
-            const userData ={login, password}
-            const user = await request('http://dev.trainee.dex-it.ru/api/Auth/SignIn', 'POST', JSON.stringify(userData) );
-            await  dispatch(isLogin(user))
-            await dispatch(setName(user.name))
+            const userData = {login, password}
+            await dispatch(loginUser(userData))
             navigate('/PageEmptyTeam')
-            
         }
         catch (e)
         {

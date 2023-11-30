@@ -6,7 +6,7 @@ import './Button.scss'
         children: ReactNode,
         type?: 'submit'| 'button',
         variant?: 'default'|'Cancel' |'Save'| 'Add',
-        onClick?: () => void;
+        onClick?: (e:React.MouseEvent<HTMLButtonElement>) => void;
     }
 
 const Button: React.FC<ButtonProps> = ({children, onClick, variant, type}) =>

@@ -1,24 +1,24 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {isLogin, setName, openMenu, isOpen, activeTeam, activePlayer} from "./actions";
+import {isLogin,openMenu, isOpen, activeTeam, activePlayer, getToken} from "./actions";
 
 interface AppState
 {
     menu: React.RefObject<any> | null;
     isLogged: boolean;
-    name: string;
     open: boolean;
     activeTeams: boolean;
     activePlayers: boolean;
+    token: string  | null;
 }
 
 const initialState: AppState = 
 {
     isLogged: false,
-    name: '',
     menu: null,
     open: false,
     activeTeams: false,
-    activePlayers: false
+    activePlayers: false,
+    token: null
 };
 
 const appReducer = createReducer(initialState, (builder) => 
@@ -29,12 +29,6 @@ const appReducer = createReducer(initialState, (builder) =>
         state.isLogged = true;
         console.log('login', state.isLogged)
     })
-    builder.addCase(setName, (state, action) =>
-    {
-        state.name = action.payload;
-
-    })
-
     builder.addCase(isOpen, (state, action) =>
     {
         state.open = action.payload
@@ -50,6 +44,10 @@ const appReducer = createReducer(initialState, (builder) =>
     builder.addCase(activePlayer, (state, action) =>
     {
         state.activePlayers = action.payload;
+    })
+    builder.addCase(getToken, (state, action) =>
+    {
+        state.token = action.payload
     })
 });
 

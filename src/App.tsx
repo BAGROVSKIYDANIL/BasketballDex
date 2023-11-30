@@ -22,7 +22,6 @@ function App() {
       <Routes>
         <Route path="/" element={<PageSignIn/>}/>
         <Route path="/SignUp" element={<PageSignUp/>}/>
-
         <Route element={<PrivateRoute/>}>
             <Route path="/PageEmptyTeam" element={<PageTeamEmpty/>}/>
             <Route path="/PageTeamAdd" element={<TeamAdd/>}/>

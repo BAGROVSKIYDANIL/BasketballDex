@@ -1,15 +1,10 @@
-import {useState, useCallback } from 'react';
-
-export const useHttp = () =>
+export const fetchHttp = () =>
 {
-    const [process, setProcess] = useState('waiting');
-    const request = useCallback( async (url:any, method='POST', body:any, headers = { }) =>
+    const request = async(url:any, method='POST', body:any, headers={}) =>
     {
-        setProcess('loading')
         try
         {
             const response = await fetch(url, {method, body, headers});
-
             if(!response.ok)
             {
                 console.log(response.body)
@@ -24,14 +19,6 @@ export const useHttp = () =>
         {
             throw e;
         }
-
-    }, [])
-
-
-    const clearError = useCallback(() =>
-    {
-        setProcess('loading')
-    }, [])
-
-    return{request, clearError, process, setProcess}
+    }
+    return{request}
 }

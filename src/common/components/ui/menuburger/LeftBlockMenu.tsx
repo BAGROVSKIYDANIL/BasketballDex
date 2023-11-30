@@ -8,7 +8,7 @@ import './leftBlovkMenu.scss';
 
 const LeftBlockMenu: React.FC = () =>
 {
-    const {name, open, activeTeams, activePlayers} = useAppSelector((state) => state.app);
+    const {open, activeTeams, activePlayers} = useAppSelector((state) => state.app);
     const [menuOpen, setMenuOpen] = useState<boolean>(true);
     const menu = useRef<HTMLDivElement>(null);
     const overlay = useRef<HTMLDivElement>(null);
@@ -69,6 +69,7 @@ const LeftBlockMenu: React.FC = () =>
         dispatch(activeTeam(false))     
     }
 
+    const name = localStorage.getItem('name')
 
     return(
         <div 
