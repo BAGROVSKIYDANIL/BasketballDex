@@ -64,12 +64,17 @@
         {
             z-index: 1;
         }
+
     }
     &__img
     {
         position: absolute;
         z-index: 0;
         object-fit: cover;
+        max-width: 150px;
+        max-height: 150px;
+
+
     }
 }
 .form 

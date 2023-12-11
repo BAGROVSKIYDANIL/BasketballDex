@@ -4,7 +4,7 @@ export const fetchHttp = () =>
     {
         try
         {
-            const response = await fetch(url, {method, body, headers});
+            const response = await fetch(url, {method, body, headers})
             if(!response.ok)
             {
                 console.log(response.body)

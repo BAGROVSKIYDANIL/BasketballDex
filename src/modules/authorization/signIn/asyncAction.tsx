@@ -1,13 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { useHttp } from "../../../common/hooks/http.hook";
 import { fetchHttp } from "../hook/http";
-import { error } from "console";
 interface ILoginData
 {
     login: string;
     password: string;
 }
-// const {request} = useHttp();
 const {request} = fetchHttp();
 export const loginUser = createAsyncThunk('auht/login', async (data: ILoginData, {rejectWithValue}) => 
 {

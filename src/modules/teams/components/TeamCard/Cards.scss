@@ -2,7 +2,7 @@
 {
     width: 1140px;
 }
-.cards
+.team-cards
 {
     display: flex;  
     align-items: center;
@@ -37,6 +37,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        img 
+        {
+            max-width: 150px;
+            max-height: 150px;
+            object-fit: contain;
+        }
     }
     &__text
     {
@@ -45,7 +51,19 @@
         background: var(--ui-dark-grey, #303030);
         padding: 24px 0 24px 0;
         text-align: center;
+    }
+    &__name
+    {
         color: #FFFFFF;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    &__year
+    {
+        font-size: 14px;
+        font-weight: 500;
+        color: #9C9C9C;
+        line-height: 24px;
     }
 }
 

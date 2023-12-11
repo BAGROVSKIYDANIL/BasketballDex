@@ -1,14 +1,18 @@
 import {createReducer } from "@reduxjs/toolkit";
-import { uploadImage } from "./action";
+import { IArrTeamCard } from "./interfaces/interface";
+import { uploadImage} from "./action";
+import { getTeamCard } from "./asyncAction";
 
-interface TeamState
+export interface TeamState
 {
-    imageUrl: string | null;
+    imageUrl: string;
+    arrCard: IArrTeamCard[]
 }
 
 const initialState: TeamState =
 {
-    imageUrl: null
+    imageUrl: '',
+    arrCard: []
 }
 
 const teamReducer = createReducer(initialState, (builder) =>
@@ -16,6 +20,10 @@ const teamReducer = createReducer(initialState, (builder) =>
     builder.addCase(uploadImage, (state, action) =>
     {
         state.imageUrl = action.payload
+    })
+    builder.addCase(getTeamCard.fulfilled, (state, action) =>
+    {
+        state.arrCard = action.payload
     })
 })
 

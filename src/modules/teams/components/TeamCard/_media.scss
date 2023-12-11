@@ -1,6 +1,6 @@
 @media (max-width: 1438px) 
 {
-    .cards
+    .team-cards
     {
         &__item 
         {
@@ -8,12 +8,9 @@
         }
     }
 }
-@media (max-width: 1200px) 
-{
-}
 @media (max-width: 992px) 
 {
-    .cards
+    .team-cards
     {
         &__grid
         {
@@ -28,7 +25,7 @@
 }
 @media (max-width: 768px) 
 {
-    .cards
+    .team-cards
     {
         &__grid
         {
@@ -43,7 +40,7 @@
 }
 @media (max-width: 576px)
 {
-    .cards
+    .team-cards
     {
         margin-bottom: 16px;
 
@@ -69,7 +66,7 @@
 }
 @media (max-width: 426px)
 {
-    .cards
+    .team-cards
     {
         &__grid
         {
@@ -85,7 +82,7 @@
 }
 @media (max-width: 376px) 
 {
-    .cards
+    .team-cards
     {
         margin-bottom: 16px;
         &__grid
@@ -119,7 +116,7 @@
 }
 @media (max-width: 356px)
 {
-    .cards
+    .team-cards
     {
         &__grid
         {

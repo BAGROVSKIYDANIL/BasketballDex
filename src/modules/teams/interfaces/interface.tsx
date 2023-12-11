@@ -4,11 +4,18 @@ export interface IFormData
     division: string;
     conference: string;
     foundationYear: number | null;
-    imageUrl: string | null;
+    imageUrl: string;
 }
-
-export interface IChangeInput 
-{
+export interface CardsTeamsItemProps {
+    imageUrl: string;
     name: string;
-    value: string | number
+    year: number;
+}
+export interface IArrTeamCard
+{
+    id: number;
+    name: string;
+    foundationYear: number;
+    imageUrl: string;
+    conference: string;
 }

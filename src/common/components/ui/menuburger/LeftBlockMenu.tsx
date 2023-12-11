@@ -56,7 +56,7 @@ const LeftBlockMenu: React.FC = () =>
     
     const  activeModulesTeam =  async () =>
     {  
-        navigate('/PageEmptyTeam')
+        navigate('/PageTeamCard')
         dispatch(activeTeam(!activeTeams))
         dispatch(activePlayer(false))
   

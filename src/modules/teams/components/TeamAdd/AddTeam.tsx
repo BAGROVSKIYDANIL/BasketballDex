@@ -4,9 +4,9 @@ import Button from '../../../../common/components/ui/button/Button';
 import { useNavigate } from 'react-router-dom';
 import { useHttp } from '../../../../common/hooks/http.hook';
 import { useAppDispatch,useAppSelector } from '../../../../common/hooks/redux.hook';
-import { useState } from 'react';
+import {useState } from 'react';
 import { uploadImage } from '../../action';
-import { IFormData, IChangeInput } from '../../interfaces/interface';
+import { IFormData} from '../../interfaces/interface';
 
 import './AddTeam.scss'
 
@@ -17,7 +17,6 @@ const AddTeam: React.FC = () => {
     const {request} = useHttp();
     const dispatch = useAppDispatch();
     const {imageUrl} = useAppSelector((state) => state.team)
-    // const [selectedFile, setSelectedFile] = useState<any>(null);
     const token = localStorage.getItem('token')
     const [formData, setFormData] = useState<IFormData>({
         name: '',
@@ -27,37 +26,18 @@ const AddTeam: React.FC = () => {
         imageUrl: ''
     })
 
+
     const handleInputChange =  (e:React.ChangeEvent<HTMLInputElement> ) =>
     {   
         let name = ''
         let value = null
-        console.log(e.target)
-        // const {name, value} = e.target;
         if(e.target.type !== 'file')
         {
-            
-            console.log(name)
-            // if(name === '')
-            // {
-            //     value = e.target.value;
-            // }
-            // else
-            // {
-            //     value = parseInt(e.target.value)
-            // }
-            // parseInt(e.target.value)
             name = e.target.name
             value = e.target.value
-            // value = typeof value === 'string' ? e.target.value : parseInt(e.target.value)
-            const numericValue = name === 'foundationYear' ? parseInt(value) : value
-            // console.log(typeof value )
-            
-         setFormData({...formData, [name]: numericValue, imageUrl: imageUrl});
-
+            const numericValue = name === 'foundationYear' ? parseInt(value) : value;
+            setFormData({...formData, [name]: numericValue});
         }
-
-
-
     }
     const handleSubmit = async (e:React.MouseEvent<HTMLFormElement>) =>
     {
@@ -70,7 +50,7 @@ const AddTeam: React.FC = () => {
             }
             const newTeam = await request('http://dev.trainee.dex-it.ru/api/Team/Add', 'POST', JSON.stringify(formData), headers);
             console.log(newTeam)
-                navigate('/PageTeamCard')
+             navigate('/PageTeamCard')
 
         }     
         catch(e)
@@ -90,11 +70,11 @@ const AddTeam: React.FC = () => {
         formDat.append('file', file)    
         const headers = {'Authorization': `Bearer ${token}`}
         const image = await request('http://dev.trainee.dex-it.ru/api/Image/SaveImage', 'POST', formDat, headers)
-        const data = await image 
-        await dispatch(uploadImage(image))  
-        console.log(data)
+         dispatch(uploadImage(image))  
+        setFormData({...formData, imageUrl: image})
+
     }
-    console.log( formData)
+
     const image = `http://dev.trainee.dex-it.ru${imageUrl}`
     return (
         <div className="addittion">
@@ -155,7 +135,6 @@ const AddTeam: React.FC = () => {
                         </div>
                         <div className="form__button">
                             <Button variant='Cancel'>Cancel</Button>
-                            {/* <Link to='/PageTeamCard'><Button type='submit' variant='Save'>Save</Button></Link> */}
                             <Button type='submit' variant='Save'>Save</Button>
                         </div>
                     </form>
