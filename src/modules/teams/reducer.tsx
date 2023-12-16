@@ -6,13 +6,13 @@ import { getTeamCard } from "./asyncAction";
 export interface TeamState
 {
     imageUrl: string;
-    arrCard: IArrTeamCard[]
+    teamArrCard: IArrTeamCard[]
 }
 
 const initialState: TeamState =
 {
     imageUrl: '',
-    arrCard: []
+    teamArrCard: []
 }
 
 const teamReducer = createReducer(initialState, (builder) =>
@@ -23,7 +23,7 @@ const teamReducer = createReducer(initialState, (builder) =>
     })
     builder.addCase(getTeamCard.fulfilled, (state, action) =>
     {
-        state.arrCard = action.payload
+        state.teamArrCard = action.payload
     })
 })
 

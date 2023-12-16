@@ -1,58 +1,45 @@
 import { useState } from 'react';
 import Select, {OnChangeValue} from 'react-select';
 import { IOption } from './interface';
+import { useAppSelector} from '../../../hooks/redux.hook';
+import { useAppDispatch } from '../../../hooks/redux.hook';
+import { selectTeam } from '../../../../modules/players/action';
 import makeAnimated from 'react-select/animated';
 
 import './MultiSelect.scss'
 
-const options:IOption[] = [
-    {
-        value: 'Memphis Grizzlies',
-        label: 'Memphis Grizzlies',
-    },
-    {
-        value: 'Denver Nuggets',
-        label: 'Denver Nuggets'
-    },
-    {
-        value: 'Portland  trail blazzers',
-        label: 'Portland  trail blazzers'
-    },
-    {
-        value: 'Minnesota timberwolves',
-        label: 'Minnesota timberwolves'
-    },
-    {
-        value: 'Oklahoma city thunder',
-        label: 'Oklahoma city thunder'
-    },
-    {
-        value: 'Philadelphia seventy sixers',
-        label: 'Philadelphia seventy sixers'
-    }
-]
+
 
 
 const animatedComponents = makeAnimated();
 
 const MultiSelect= () => {
-    const [currentCities, setCurrentCities] = useState(['null'])
-     
-    const getValue = () =>
+    const {arrTeams} = useAppSelector((state) => state.players)    
+    const [currentTeam, setCurrentTeam] = useState([])
+    const dispatch = useAppDispatch();
+
+
+    const getValue = (selectedValues:any, options:any) =>
     {
-        return currentCities ?
-        options.filter(city => currentCities.indexOf(city.value) >= 0) : options.find(city => city.value === currentCities) 
+        if(selectedValues.length === 0 )
+        {
+            return null;
+        }
+        return options.filter((option: { value: string }) => selectedValues.includes(option.value));
     }
-    const onChange = (newValue: OnChangeValue<IOption, boolean>) =>
+    const onChange = (newValue: OnChangeValue<IOption, boolean>, setter:any) =>
     {
-        setCurrentCities((newValue as IOption[]).map(value => value.value))
+        const selectedValues = (newValue as IOption[]).map(value => value.value);
+        setter(selectedValues)
+        dispatch(selectTeam(selectedValues))
     }
+
     return (        
             <Select 
             classNamePrefix='custom-select'
-            onChange={onChange} 
-            value={getValue()} 
-            options={options}
+            onChange={newValue => onChange(newValue, setCurrentTeam)} 
+            value={getValue(currentTeam, arrTeams)} 
+            options={arrTeams}
             components={animatedComponents}
             isMulti />
             

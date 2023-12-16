@@ -7,7 +7,7 @@ import CardsTeamsItem from './Card';
 const Lists = () =>
 {
     const dispatch = useAppDispatch();
-    const {arrCard}: TeamState = useAppSelector((state) => state.team)
+    const {teamArrCard}: TeamState = useAppSelector((state) => state.team)
     
     useEffect(() =>
     {
@@ -19,8 +19,8 @@ const Lists = () =>
             <div className="team-cards">
                 <ul className="team-cards__grid">
                         {
-                            arrCard && Array.isArray(arrCard)?
-                            arrCard.map((item:any, index:any) => {
+                            teamArrCard && Array.isArray(teamArrCard)?
+                            teamArrCard.map((item:any, index:any) => {
                                 return (
                                     <CardsTeamsItem imageUrl={item.imageUrl} 
                                                     name={item.name} 

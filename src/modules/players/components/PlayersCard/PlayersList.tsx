@@ -1,55 +1,36 @@
-import Player from '../../../../assets/images/Jaylen.png'
+import { useEffect } from 'react';
+import { getPlayerCard } from '../../asyncAction';
+import { useAppDispatch, useAppSelector } from '../../../../common/hooks/redux.hook';
 import PlayersCard from './PlayersCard';
-
-interface CardsPlayersItemProps
-{
-    imageUrl: string,
-    title: string
-}
 
 
 const PlayersList = () => {
-    // const teamCard: CardsPlayersItemProps[] = [
-    //     {}
-    // ]
-    const players: CardsPlayersItemProps[] = [
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-        {
-        imageUrl: Player,
-        title: 'Jaylen Adams #10'
-        },
-    ]
 
+    const dispatch = useAppDispatch();
+    const {arrPlayersCard} = useAppSelector((state) => state.players)
+    console.log(arrPlayersCard)
+    useEffect(() =>
+    {
+        dispatch(getPlayerCard())
+    }, [dispatch])
+    console.log(arrPlayersCard)
     return (
         <div className="cards">
             <ul className="cards__grid">
                 {
-                    players.map((item, index) =>
+                    arrPlayersCard && Array.isArray(arrPlayersCard)?
+                    arrPlayersCard.map((item: any, index: any) =>
                     {
                         return(
-                            <PlayersCard imageUrl={item.imageUrl} title={item.title} key={index} />
+                            <PlayersCard avatarUrl={item.avatarUrl}
+                                         name={item.name}
+                                         team={item.team}
+                                         number={item.number}
+                                         key={index}
+                                         />
                         )
                     })
-
+                    : null
                 }
             </ul>
         </div>

@@ -5,7 +5,7 @@ input:not( [type="checkbox"], [type="search"], [type="file"] )
     border-radius: 4px;   
     background:  #F6F6F6;
     border: none;
-    padding: 0;      
+    padding: 0;    
     &:hover
     {
         background: #D1D1D1;
@@ -25,4 +25,9 @@ input:not( [type="checkbox"], [type="search"], [type="file"] )
 #fileInput
 {
     display: none;
+}
+#file
+{
+    display: none;
+
 }

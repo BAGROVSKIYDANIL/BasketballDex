@@ -2,7 +2,7 @@
 {
     .css-b62m3t-container
     {
-        left: -112px !important;
+        // left: -112px !important;
     }
     .custom-select
     {
@@ -10,6 +10,10 @@
         {
             width: 304px !important;
         }
+    }
+    .search__select .css-b62m3t-container
+    {
+        left: -112px !important;
     }
 
 }
@@ -27,6 +31,11 @@
             width: 300px !important;
         }
     }
+    .search__select .css-b62m3t-container
+    {
+        left: -12px !important;
+    }
+
 }
 @media(max-width: 768px)
 {   .css-b62m3t-container
@@ -39,5 +48,10 @@
         {
             width: 100% !important;
         }
-    }    
+    }   
+     .search__select .css-b62m3t-container
+     {
+        margin-left: 0 !important;
+        position: static !important;
+     } 
 }

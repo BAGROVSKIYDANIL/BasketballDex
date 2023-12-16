@@ -25,8 +25,13 @@ const SignIn: React.FC = () =>
         try
         {
             const userData = {login, password}
-            await dispatch(loginUser(userData))
-            navigate('/PageEmptyTeam')
+            if(userData.login && userData.password )
+            {
+                await dispatch(loginUser(userData))
+                navigate('/PageEmptyTeam')
+            }
+            
+
         }
         catch (e)
         {

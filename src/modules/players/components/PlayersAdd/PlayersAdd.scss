@@ -32,7 +32,12 @@
     {
         height: 40px
     }
-
+    &__input
+    {
+        width: 0 !important;
+        min-width: 0 !important;
+        color: none !important;
+    }
     &__multi-value
     {
         border-radius: 4px !important;
