@@ -1,6 +1,6 @@
-import { createReducer } from "@reduxjs/toolkit"
+import { PayloadAction, createReducer } from "@reduxjs/toolkit"
 import {IPlayersState } from "./interfaces/interface"
-import { uploadImagePlayer, selectTeam } from "./action"
+import { uploadImagePlayer, selectTeam, uploadPageIndex } from "./action"
 import { getPlayerPosition, getTeams, getPlayerCard } from "./asyncAction"
 
 
@@ -11,8 +11,18 @@ const initialState: IPlayersState =
     arrPosition: [],
     arrTeams: [],
     arrPlayersCard: [],
-    selectedTeam: []
+    selectedTeam: [],
+    pageIndex:{
+        startIndex: 0,
+        endIndex: 0
+    },
+    paginate:{
+        count: null,
+        page: null,
+        size: null
+    }
 }
+
 
 const playersReducer = createReducer(initialState, (builder) =>
 {
@@ -45,11 +55,18 @@ const playersReducer = createReducer(initialState, (builder) =>
     })
     builder.addCase(getPlayerCard.fulfilled, (state, action) =>
     {
-        state.arrPlayersCard = action.payload
+        state.arrPlayersCard = action.payload.data
+        state.paginate = action.payload
     })
     builder.addCase(selectTeam, (state, action) =>
     {
         state.selectedTeam = action.payload;
+    })
+    builder.addCase(uploadPageIndex, (state, action: PayloadAction<{ startIndex: number, endIndex: number }>) =>
+    {
+        // state.pageIndex.startIndex = action.payload
+        // state.pageIndex.endIndex = action.payload
+        state.pageIndex = action.payload
     })
 })
 

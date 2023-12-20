@@ -14,6 +14,7 @@ const PlayersCard: FC<CardsPlayersItemProps> = ({avatarUrl, name, number, team})
     const arrName:any = arrTeams.find((item) => item.id === team)
     const teamName = arrName ? arrName.value : null
     const image = `http://dev.trainee.dex-it.ru${avatarUrl}`
+    console.log(selectedTeam)
     const renderCard = selectedTeam.length === 0 ? true : selectedTeam.some((item) => item === teamName) ? true : false
     
     

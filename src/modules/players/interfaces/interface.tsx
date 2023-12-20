@@ -17,6 +17,17 @@ export interface IPlayersState
     arrTeams: IArrTeams[];
     arrPlayersCard: IPlayersCard[];
     selectedTeam: string[]
+    paginate:
+    {
+        count: number | null;
+        page: number | null;
+        size: number | null;
+    }
+    pageIndex:
+    {
+        startIndex: number,
+        endIndex: number  
+    }
 }
 export interface IArrTeams
 {

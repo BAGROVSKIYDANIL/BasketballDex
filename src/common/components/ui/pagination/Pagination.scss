@@ -101,6 +101,40 @@
         margin: 8px 36px 8px 52px;
     }
 }
+.pagin 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    outline: transparent;
+    &__active
+    {
+        background-color: #E4163A;
+        a 
+        {
+            color: #FFF;
+        }
+    }
+    &__page-link
+    {
+        font-size: 14px;
+        font-weight: 500;
+        color: #707070;
+       
+    }
+    & > li 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
 .button
 {
     background: var(--ui-red, #E4163A);

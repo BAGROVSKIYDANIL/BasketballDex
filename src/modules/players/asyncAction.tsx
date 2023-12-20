@@ -36,5 +36,5 @@ export const getPlayerCard = createAsyncThunk('GET_PLAYER_CARD', async () =>
     const token = localStorage.getItem('token');
     const headers = {'Authorization': `Bearer ${token}`};    
     const playerCard = await request('http://dev.trainee.dex-it.ru/api/Player/GetPlayers', 'GET', null, headers)
-    return playerCard.data
+    return playerCard
 })

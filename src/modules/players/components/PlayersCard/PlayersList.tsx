@@ -7,19 +7,24 @@ import PlayersCard from './PlayersCard';
 const PlayersList = () => {
 
     const dispatch = useAppDispatch();
-    const {arrPlayersCard} = useAppSelector((state) => state.players)
-    console.log(arrPlayersCard)
+    const {arrPlayersCard, pageIndex, selectedTeam} = useAppSelector((state) => state.players)
+    console.log(pageIndex)
+    // const currentCardPlayer = arrPlayersCard.slice(pageIndex.startIndex, pageIndex.endIndex)
+    const currentCardPlayer = selectedTeam.length === 0 ? 
+    arrPlayersCard.slice(pageIndex.startIndex, pageIndex.endIndex) :
+    arrPlayersCard
+    console.log(currentCardPlayer)
     useEffect(() =>
     {
         dispatch(getPlayerCard())
-    }, [dispatch])
-    console.log(arrPlayersCard)
+    }, [dispatch, pageIndex])
+
     return (
         <div className="cards">
             <ul className="cards__grid">
                 {
-                    arrPlayersCard && Array.isArray(arrPlayersCard)?
-                    arrPlayersCard.map((item: any, index: any) =>
+                    // arrPlayersCard && Array.isArray(arrPlayersCard)?
+                    currentCardPlayer.map((item: any, index: any) =>
                     {
                         return(
                             <PlayersCard avatarUrl={item.avatarUrl}
@@ -30,7 +35,7 @@ const PlayersList = () => {
                                          />
                         )
                     })
-                    : null
+                    // : null
                 }
             </ul>
         </div>
