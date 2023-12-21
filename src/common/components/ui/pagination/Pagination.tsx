@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import { useAppSelector,useAppDispatch } from '../../../hooks/redux.hook';
 import { uploadPageIndex } from '../../../../modules/players/action';
+import { uploadTeamPageIndex } from '../../../../modules/teams/action';
 
 import './Pagination.scss'
 
@@ -10,16 +11,18 @@ const Pagination: React.FC = () =>
 
     // const [isVisible, setIsVisible] = useState(false);
     const {paginate} = useAppSelector((state) => state.players)
+    const {paginateTeam} = useAppSelector((state) => state.team)
     const dispatch = useAppDispatch();
     const [currentPage, setCurrentPage] = useState<number>(0)
     const countPage = 6;
 
+
     const handlePageChange = ({selected}:{selected: number}) =>
     {
         setCurrentPage(selected)
-        console.log(selected)
     }
-    const countItem = paginate.count ? paginate.count: 0;
+    
+    const countItem = paginate.count  ? paginate.count: paginateTeam.count ? paginateTeam.count : 0;
     const startIndex = currentPage * countPage;
     const endIndex = startIndex + countPage;
 
@@ -27,6 +30,7 @@ const Pagination: React.FC = () =>
     useEffect(() =>
     {
         dispatch(uploadPageIndex({startIndex, endIndex}))
+        dispatch(uploadTeamPageIndex({startIndex, endIndex}))
     },[dispatch, startIndex, endIndex])
 
 

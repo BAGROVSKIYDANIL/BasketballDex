@@ -19,3 +19,19 @@ export interface IArrTeamCard
     imageUrl: string;
     conference: string;
 }
+export interface TeamState
+{
+    imageUrl: string;
+    teamArrCard: IArrTeamCard[],
+    pageIndex:
+    {
+        startIndex: number,
+        endIndex: number  
+    }
+    paginateTeam:
+    {
+        count: number | null;
+        page: number | null;
+        size: number | null;
+    }
+}

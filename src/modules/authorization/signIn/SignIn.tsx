@@ -2,10 +2,9 @@ import Button from '../../../common/components/ui/button/Button';
 import Label from '../../../common/components/ui/label/Label';
 import Input from '../../../common/components/ui/input/Input';
 import Basketball from '../../../assets/images/Basketball.png' ;
-import { useState} from 'react';
-import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom'
-import { useAppDispatch } from '../../../common/hooks/redux.hook';
+import { useState, useEffect} from 'react';
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../../common/hooks/redux.hook';
 import { loginUser } from './asyncAction';
 
 import './signIn.scss';
@@ -13,10 +12,26 @@ import './signIn.scss';
 
 const SignIn: React.FC = () =>
 {   
+    const location = useLocation();
     const dispatch = useAppDispatch();
+    const {isLogged} = useAppSelector((state) => state.auth)
     const navigate = useNavigate();
     const [login, setUserLogin] = useState('');
     const [password, setUserPassword] = useState('');
+    
+                 if(!login && !password )
+             {
+                // sessionStorage.removeItem('token')
+                localStorage.removeItem('token')
+             }
+
+    useEffect(() =>
+    {
+        if(isLogged)
+        {
+            navigate('/PageEmptyTeam', {replace: true})
+        }
+    }, [isLogged, navigate])
 
 
     const handleLogin = async (e: React.MouseEvent<HTMLFormElement>) =>
@@ -25,20 +40,24 @@ const SignIn: React.FC = () =>
         try
         {
             const userData = {login, password}
+
             if(userData.login && userData.password )
             {
                 await dispatch(loginUser(userData))
-                navigate('/PageEmptyTeam')
+                navigate('/PageEmptyTeam', {replace: true})
+                // isLogged ? navigate('/PageEmptyTeam') : null;
+
             }
-            
+
 
         }
         catch (e)
         {
             return e
         }
+        
     }
-
+console.log(isLogged)
     return(
         <div className='form'>
             <div className="container">

@@ -43,7 +43,7 @@ const playersReducer = createReducer(initialState, (builder) =>
     });
     builder.addCase(getTeams.fulfilled, (state, action) =>
     {
-        const arr = action.payload;
+        const arr = action.payload.data;
         state.arrTeams = arr.map((item:any) =>
         {
             return{
@@ -64,8 +64,6 @@ const playersReducer = createReducer(initialState, (builder) =>
     })
     builder.addCase(uploadPageIndex, (state, action: PayloadAction<{ startIndex: number, endIndex: number }>) =>
     {
-        // state.pageIndex.startIndex = action.payload
-        // state.pageIndex.endIndex = action.payload
         state.pageIndex = action.payload
     })
 })

@@ -13,6 +13,7 @@ export const loginUser = createAsyncThunk('auht/login', async (data: ILoginData,
         const headers = {'Content-Type': 'application/json'}
         const user = await request('http://dev.trainee.dex-it.ru/api/Auth/SignIn', 'POST', JSON.stringify(data), headers);
         localStorage.setItem('token', user.token)
+        // sessionStorage.setItem('token', user.token)
         localStorage.setItem('name', user.name)
         return user.data
     }

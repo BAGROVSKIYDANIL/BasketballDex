@@ -8,12 +8,10 @@ const PlayersList = () => {
 
     const dispatch = useAppDispatch();
     const {arrPlayersCard, pageIndex, selectedTeam} = useAppSelector((state) => state.players)
-    console.log(pageIndex)
     // const currentCardPlayer = arrPlayersCard.slice(pageIndex.startIndex, pageIndex.endIndex)
     const currentCardPlayer = selectedTeam.length === 0 ? 
-    arrPlayersCard.slice(pageIndex.startIndex, pageIndex.endIndex) :
-    arrPlayersCard
-    console.log(currentCardPlayer)
+    arrPlayersCard.slice(pageIndex.startIndex, pageIndex.endIndex) : arrPlayersCard
+
     useEffect(() =>
     {
         dispatch(getPlayerCard())
