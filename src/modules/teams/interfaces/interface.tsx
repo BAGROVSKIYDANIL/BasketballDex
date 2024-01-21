@@ -10,6 +10,7 @@ export interface CardsTeamsItemProps {
     imageUrl: string;
     name: string;
     year: number;
+    id: number;
 }
 export interface IArrTeamCard
 {
@@ -17,6 +18,7 @@ export interface IArrTeamCard
     name: string;
     foundationYear: number;
     imageUrl: string;
+    division: string;
     conference: string;
 }
 export interface TeamState
@@ -33,5 +35,6 @@ export interface TeamState
         count: number | null;
         page: number | null;
         size: number | null;
+        data: IArrTeamCard[]
     }
 }

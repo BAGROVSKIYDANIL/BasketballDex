@@ -13,6 +13,13 @@
             margin-top: 20px;
             text-align: center;
         }
+        &__img 
+        {
+            img 
+            {
+                transform: scale(1);
+            }
+        }
     }
 }
 @media (max-width: 577px)
@@ -71,6 +78,7 @@
         &__wrapper
         {
             border-radius: 0;
+            padding: 49px 0;
         }
         #element1
         {

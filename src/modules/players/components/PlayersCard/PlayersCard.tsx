@@ -4,10 +4,11 @@ import { useAppSelector } from "../../../../common/hooks/redux.hook";
 import { useAppDispatch } from "../../../../common/hooks/redux.hook";
 import { useEffect } from "react";
 import { getTeamCard } from "../../../teams/asyncAction";
+import { Link } from "react-router-dom";
 
 import './PlayersCards.scss'
 
-const PlayersCard: FC<CardsPlayersItemProps> = ({avatarUrl, name, number, team}) => 
+const PlayersCard: FC<CardsPlayersItemProps> = ({avatarUrl, name, number, team, index}) => 
 {
     const dispatch = useAppDispatch();
     const {arrTeams, selectedTeam} = useAppSelector((state) => state.players) 
@@ -26,6 +27,7 @@ const PlayersCard: FC<CardsPlayersItemProps> = ({avatarUrl, name, number, team})
     return (
 
         renderCard ?
+        <Link key={index} to={`/PlayersDetail/${name}`}>
                 <li className="cards__item">
             <div className="cards__wrapper">
                 <img src={image} alt="player" />
@@ -39,6 +41,7 @@ const PlayersCard: FC<CardsPlayersItemProps> = ({avatarUrl, name, number, team})
                 </div>
             </div>
         </li>
+        </Link>
         : null
     );
 };

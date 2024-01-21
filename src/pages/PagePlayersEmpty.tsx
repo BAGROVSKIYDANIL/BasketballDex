@@ -4,6 +4,7 @@ import Pagination from "../common/components/ui/pagination/Pagination";
 import PlayersEmpty from "../modules/players/components/PlayersEmpty/PlayersEmpty";
 
 const PagePlayersEmpty = () => {
+
     return (
         <Layout>
             <Search showMultiSelect={true}/>

@@ -15,7 +15,8 @@ const initialState: TeamState =
     paginateTeam:{
         count: null,
         page: null,
-        size: null
+        size: null,
+        data: []
     }
 }
 

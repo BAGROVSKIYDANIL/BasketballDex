@@ -19,7 +19,8 @@ const initialState: IPlayersState =
     paginate:{
         count: null,
         page: null,
-        size: null
+        size: null,
+        data: []
     }
 }
 
@@ -56,7 +57,7 @@ const playersReducer = createReducer(initialState, (builder) =>
     builder.addCase(getPlayerCard.fulfilled, (state, action) =>
     {
         state.arrPlayersCard = action.payload.data
-        state.paginate = action.payload
+        state.paginate = action.payload.data
     })
     builder.addCase(selectTeam, (state, action) =>
     {

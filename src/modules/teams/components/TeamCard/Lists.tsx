@@ -2,6 +2,7 @@ import {useAppDispatch, useAppSelector} from '../../../../common/hooks/redux.hoo
 import { getTeamCard } from '../../asyncAction';
 import { useEffect } from 'react';
 import { TeamState } from '../../interfaces/interface';
+import { Link } from 'react-router-dom';
 import CardsTeamsItem from './Card';
 
 const Lists = () =>
@@ -9,7 +10,6 @@ const Lists = () =>
     const dispatch = useAppDispatch();
     const {teamArrCard, pageIndex}: TeamState = useAppSelector((state) => state.team) 
     const currentCardTeam = teamArrCard.slice(pageIndex.startIndex, pageIndex.endIndex)
-
 
     useEffect(() =>
     {
@@ -21,15 +21,16 @@ const Lists = () =>
             <div className="team-cards">
                 <ul className="team-cards__grid">
                         {
-                            // teamArrCard && Array.isArray(teamArrCard)?
-                            currentCardTeam.map((item:any, index:any) => {
+                            currentCardTeam.map((item:any, index:number) => {
                                 return (
-                                    <CardsTeamsItem imageUrl={item.imageUrl} 
+                                        <Link key={item.id} to={`/TeamDetail/${item.id}`}>
+                                                <CardsTeamsItem imageUrl={item.imageUrl} 
                                                     name={item.name} 
                                                     year={item.foundationYear} 
-                                                    key={index} />
+                                                    key={index} 
+                                                    id={item.id}/>
+                                        </Link>
                                         )})
-                            // : null
                         }
                     </ul>
             </div>

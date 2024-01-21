@@ -4,6 +4,7 @@ import { loginUser } from "./asyncAction";
 const initialState =
 {
     isLogged: false,
+
 }
 
 const auth = createReducer(initialState, (builder) =>
@@ -16,6 +17,7 @@ const auth = createReducer(initialState, (builder) =>
     {
         state.isLogged = false
     })
+
 })
 
 export default auth;

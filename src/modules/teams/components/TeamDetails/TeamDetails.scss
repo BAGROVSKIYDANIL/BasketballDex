@@ -69,7 +69,11 @@
     }
     &__img  
     {
-        height: 210px;
+        // height: 210px;
+        img 
+        {
+            transform: scale(1.4);
+        }
     }
     &__mainTitle
     {

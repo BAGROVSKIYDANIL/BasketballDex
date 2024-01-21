@@ -1,9 +1,25 @@
-import Greg from '../../../../assets/images/POR 1.png'
+import { useEffect } from 'react'
+import { useAppSelector, useAppDispatch } from '../../../../common/hooks/redux.hook'
+import { useParams } from 'react-router-dom'
+import { getPlayerCard } from '../../asyncAction'
+
 import './PlayersDetails.scss'
 
 
 const PlayersDetails = () =>
 {
+    const dispatch = useAppDispatch();
+    const {arrPlayersCard} = useAppSelector((state) => state.players)
+    const {name} = useParams()
+    console.log(name)
+    const playersDetail = arrPlayersCard.find(item => item.name.trim() === name)
+    const image = `http://dev.trainee.dex-it.ru${playersDetail?.avatarUrl}`
+    console.log(playersDetail?.name)
+    useEffect(() =>
+    {
+        dispatch(getPlayerCard())
+    }, [dispatch])
+
     return(
         <div className="players">
             <div className="players__menu">
@@ -27,11 +43,13 @@ const PlayersDetails = () =>
             </div>
             <div className="players__wrapper">
                 <div className="players__img">
-                    <img src={Greg} alt="" />
+                    {/* <img src={Greg} alt="" /> */}
+                    <img src={image} alt="" />
                 </div>
                 <div className="players__information">
                     <div className="players__main-title">
-                        Greg Whittington
+                        {/* Greg Whittington */}
+                        {playersDetail?.name}
                         <span> #22</span>
                     </div>   
                     <div className="players__row1">

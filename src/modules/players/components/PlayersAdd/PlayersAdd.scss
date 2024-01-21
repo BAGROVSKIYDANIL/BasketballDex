@@ -68,6 +68,16 @@
     {
         cursor: pointer !important;
         padding-right: 12px !important;
+        position: relative !important;
+    }
+    &__clear-indicator
+    {
+        position: relative !important;
+
+        svg 
+        {
+            top: 0 !important;
+        }
     }
     &__indicator-separator
     {

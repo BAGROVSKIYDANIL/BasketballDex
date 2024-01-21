@@ -3,27 +3,27 @@ import Label from '../../../common/components/ui/label/Label';
 import Input from '../../../common/components/ui/input/Input';
 import Basketball from '../../../assets/images/Basketball.png' ;
 import { useState, useEffect} from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../common/hooks/redux.hook';
 import { loginUser } from './asyncAction';
+
 
 import './signIn.scss';
 
 
 const SignIn: React.FC = () =>
 {   
-    const location = useLocation();
     const dispatch = useAppDispatch();
     const {isLogged} = useAppSelector((state) => state.auth)
     const navigate = useNavigate();
     const [login, setUserLogin] = useState('');
     const [password, setUserPassword] = useState('');
-    
-                 if(!login && !password )
-             {
-                // sessionStorage.removeItem('token')
-                localStorage.removeItem('token')
-             }
+    const path = '/PageTeamCard';
+
+    if(!login && !password )
+        {
+        localStorage.removeItem('token')
+        }
 
     useEffect(() =>
     {
@@ -44,9 +44,7 @@ const SignIn: React.FC = () =>
             if(userData.login && userData.password )
             {
                 await dispatch(loginUser(userData))
-                navigate('/PageEmptyTeam', {replace: true})
-                // isLogged ? navigate('/PageEmptyTeam') : null;
-
+                navigate(path, {replace: true})
             }
 
 
@@ -57,7 +55,6 @@ const SignIn: React.FC = () =>
         }
         
     }
-console.log(isLogged)
     return(
         <div className='form'>
             <div className="container">

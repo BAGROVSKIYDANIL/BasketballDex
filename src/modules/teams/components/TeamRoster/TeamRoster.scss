@@ -2,6 +2,7 @@
 .roster 
 {
     margin: 24px 0 19px 0;
+    
     &__header
     {
         height: 54px;
@@ -11,176 +12,88 @@
         display: flex;
         align-items: center;
         padding-left: 32px;
+    }
 
-        span 
-        {
-            color: #707070;
-            font-size: 18px;
-            font-weight: 500;
-        }
-    }
-}
-table 
-{
-    border-collapse: collapse;
-    display: flex;
-    flex-direction: column;
-}
-.head
-{
-    &__column1
-    {
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-    &__column2
-    {
-        display: flex;
-        align-items: center;
-    }
-    &__row 
-    {
-        height: 40px;
-        display: flex;
-        padding: 0 32px;
-        align-items: center;
-        border: 0.5px solid  #9C9C9C;
-        background: #FFF;
-        border-top: none;
-    }
-    &__numbering 
-    {
-        width: 8px;
-        margin-right: 48px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-        line-height: 24px;
-    }
-    &__player
-    {
-        width: 39px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-    }
-    &__height 
-    {
-        width: 44px;
-        margin-right: 84px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-        text-align: center;
-    }
-    &__weight 
-    {
-        width: 46px;
-        margin-right: 84px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-    }
-    &__age 
-    {
-        width: 27px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;       
-    }
-} 
-.body
-{
     &__row
     {
-        height: 56px;
         display: flex;
-        padding: 0 43px 0 22px;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 43px 0 32px;
         border: 0.5px solid #9C9C9C;
-        background: #FFF;
         border-top: none;
-        &-bottom
-        {
-            @extend .body__row;
-            border-radius: 0px 0px 10px 10px;
-        }
+        font-size: 14px;
+        background: #FFF;
+        height: 56px;
+        color: var(--color-light-gray);
+    }
+    &__row:nth-child(1) 
+    {
+        height: 40px;
+        padding: 0 32px;
     }
     &__column1
     {
         display: flex;
-        align-items: center;
         width: 100%;
+        align-items: center;
+        max-width: 272px;
+        justify-content: space-between;
+
+    }
+    &__row:nth-child(1) &__column1:nth-child(1)
+    {
+        max-width: 92px;
+    }
+    &__row:nth-child(1) &__column2:nth-child(2) 
+    {
+        max-width: 285px;
+    }
+    &__row:nth-last-child(-n + 1)
+    {
+        border-radius: 0px 0px 10px 10px
     }
     &__column2
     {
         display: flex;
-        align-items: center;
+        max-width: 274px;
+        width: 100%;
+        justify-content: space-between;
+
     }
     &__number
     {
-        width: 36px;
-        margin-right: 24px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-
+                font-size: 14px;
+                    font-weight: 500;
     }
-    &__img
+    &__player
+    {
+        display: flex;
+    }
+    &__img 
     {
         margin-right: 10px;
-        justify-content: center;
         img 
         {
             width: 52px;
             height: 38px;
-           border-radius: 50%;
+            border-radius: 50%;
         }
     }
-    &__player
+    &__info
     {
+        display: flex;
+        justify-content: center;
+        line-height: 21px;
+        flex-direction: column;
         width: 160px;
-        font-weight: 500;
-        text-align: left;
-    }
-    &__title
-    {
-        font-size: 14px;
-        color: #707070;
-        line-height: 21px;
-    }
-    &__subtitle
-    {
-        font-size: 12px;
-        color: #9c9c9c;
-        line-height: 21px;
-    }
-    &__height 
-    {
-        width: 66px;
-        margin-right: 72px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-        text-align: center;
-    }
-    &__weight
-    {
-        width: 44px;
-        margin-right: 86px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-        text-align: center;
-    }
-    &__age
-    {
-        width: 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #707070;
-        text-align: center;
+        align-items: flex-start;
+        span:nth-child(2)
+        {
+            font-size: 12px;
+            color: #9C9C9C;
+        }
     }
 }
+
 @import 'media'

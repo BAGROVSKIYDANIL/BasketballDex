@@ -36,5 +36,10 @@ main
     display: flex;
     flex: 1;
 }
+//Переменные 
 
+:root 
+{
+    --color-light-gray: #707070;
+}
 @import 'media'

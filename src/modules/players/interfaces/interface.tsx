@@ -22,6 +22,7 @@ export interface IPlayersState
         count: number | null;
         page: number | null;
         size: number | null;
+        data: IPlayersCard[];
     }
     pageIndex:
     {
@@ -50,5 +51,6 @@ export interface CardsPlayersItemProps
     avatarUrl: string;
     name: string;
     team: number;
-    number: number
+    number: number;
+    index: number;
 }

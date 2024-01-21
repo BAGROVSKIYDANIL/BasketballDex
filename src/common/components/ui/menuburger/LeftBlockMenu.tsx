@@ -1,8 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { useAppSelector, useAppDispatch} from '../../../hooks/redux.hook';
 import { isOpen, activeTeam, activePlayer } from '../../../../core/redux/actions';
-import {useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import './leftBlovkMenu.scss';
 
 
@@ -12,8 +11,8 @@ const LeftBlockMenu: React.FC = () =>
     const [menuOpen, setMenuOpen] = useState<boolean>(true);
     const menu = useRef<HTMLDivElement>(null);
     const overlay = useRef<HTMLDivElement>(null);
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const openMenus = () =>
     {
@@ -33,6 +32,7 @@ const LeftBlockMenu: React.FC = () =>
         }
 
     },[open])
+
 
     const closeMenu = () =>
     {
@@ -56,6 +56,7 @@ const LeftBlockMenu: React.FC = () =>
     
     const  activeModulesTeam =  async () =>
     {  
+        //  navigate('/PageEmptyTeam') : navigate('/PageTeamCard')
         navigate('/PageTeamCard')
         dispatch(activeTeam(!activeTeams))
         dispatch(activePlayer(false))
@@ -64,7 +65,9 @@ const LeftBlockMenu: React.FC = () =>
     }
     const activeModulesPlayer = () =>
     {
-        navigate('/PageEmptyPlayer')
+        // paginate.data.length === 0 ? navigate('/PageEmptyPlayer') : navigate('/PagePlayerCard')
+        // navigate('/PageEmptyPlayer')
+        navigate('/PagePlayerCard')
         dispatch(activePlayer(!activePlayers))    
         dispatch(activeTeam(false))     
     }
